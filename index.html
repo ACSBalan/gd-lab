@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#112638"><meta name="description" content="Laborator interactiv de geometrie descriptivă: epure, 3D, 345 de carduri, 38 de exerciții, examen și studiu offline.">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="GD Lab">
+<title>GD Lab — Geometrie descriptivă și desen tehnic</title>
+<link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./icons/icon-180.png">
+<link rel="icon" href="./icons/icon-192.png" type="image/png"><link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" aria-label="Navigare principală">
+    <div class="identity"><div class="identity-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M7 44H58M46 7V57" stroke="currentColor" stroke-width="2.5"/><path d="M12 14L28 28L28 49" fill="none" stroke="#7bc5e7" stroke-width="3"/><circle cx="28" cy="28" r="5" fill="#d8a65b"/><circle cx="28" cy="49" r="4" fill="#7bc5e7"/></svg></div><div><strong>GD Lab</strong><small>Geometrie descriptivă<br>și desen tehnic</small></div></div>
+    <div class="sidebar-label">SPAȚIU DE STUDIU</div>
+    <nav id="nav-main"><button data-route="home" class="active"><span>⌂</span> Acasă</button><button data-route="cards"><span>▤</span> Carduri</button><button data-route="lab"><span>◈</span> Laborator</button><button data-route="exercises"><span>✎</span> Seminar</button><button data-route="exam"><span>◷</span> Examen</button><button data-route="progress"><span>▥</span> Progres</button></nav>
+    <div class="sidebar-end"><div class="offline-dot"></div><span id="sidebar-offline">Pregătit pentru studiu</span><button data-route="settings" class="settings-link">⚙ Setări</button></div>
+  </aside>
+  <div class="app-main"><header class="topbar"><div class="mobile-logo">◈ <b>GD Lab</b></div><div class="topbar-title" id="top-title">Spațiul tău de studiu</div><div class="topbar-right"><span id="network-tag" class="network-tag">Fără cont necesar</span><button id="top-settings" class="icon-button" data-route="settings" aria-label="Setări">⚙</button></div></header>
+  <main id="page" tabindex="-1"><div class="loading">Pregătim spațiul tău de învățare…</div></main>
+  <footer class="footer">Înțelege · Explorează · Construiește · Verifică</footer></div>
+</div>
+<nav class="mobile-tabs" aria-label="Navigare mobilă"><button data-route="home">⌂<small>Acasă</small></button><button data-route="cards">▤<small>Carduri</small></button><button data-route="lab">◈<small>Laborator</small></button><button data-route="exercises">✎<small>Seminar</small></button><button data-route="exam">◷<small>Examen</small></button><button data-route="progress">▥<small>Progres</small></button></nav>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="./data/bundle.js"></script><script src="./data/exam.js"></script><script src="./scripts/geometry.js"></script><script src="./scripts/srs.js"></script><script src="./scripts/labs.js"></script><script src="./scripts/app.js"></script>
+</body></html>

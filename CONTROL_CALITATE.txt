@@ -1,0 +1,27 @@
+GD Lab — control tehnic intern
+
+Livrabile: GD_Lab.html (autonom), GD_Lab_PWA.zip (GitHub Pages).
+Aspect editorial public: GD Lab — Geometrie descriptivă și desen tehnic.
+
+Modificări în această trecere:
+- U1: date și asemănare geometrică explicite; metri în valori și feedback.
+- U2: cazul y=z=0 -> OX; semne negative tipografice uniforme în laborator.
+- U3: d și d′ prelungite grafic până la urme, coordonate în m.
+- U4: reprezentarea Pw și transpunerea lui Py pe planul lateral W.
+- U5: catetele triunghiului trasate la aceeași scară.
+- U6: convenții de unități și vizibilitate prin compararea adâncimilor.
+- U7: secțiune dinamică pentru sferă, cilindru și con; V și H desenate cu OX comun; fără generatoare întrerupte decorative.
+- U8: aceeași origine și scară pentru axele și punctele epurei.
+- U9: dezvoltare cilindrică cu scară metrică identică pe ambele direcții și planul z=0,5x+0,3 explicit.
+- U10: dimensiunea efectivă pe desen variază cu numitorul scării la zoom constant.
+- 4 carduri corectate academic, fără schimbarea ID-urilor; 5 întrebări de examen clarificate; 2 fișe cu unități explicite.
+- Site PWA: cache nou, progresul local și structura aplicației păstrate.
+
+Probe efectuate:
+- 77 controale de logică/geometrie din versiunea anterioară: trecute;
+- 148 controale noi ale ecuațiilor și coordonatelor SVG: trecute;
+- 10 laboratoare, variantele sferă/cilindru/con, răspunsuri și navigare testate în Chromium;
+- vizualizare desktop și mobil, fără excepții JavaScript în fluxurile testate;
+- 345 carduri, 38 exerciții, 50 întrebări cu variante distincte, 14 planșe, toate fișierele PWA prezente.
+
+Limite: instalarea offline pe iPhone fizic nu este verificată aici. Modelul axonometric ilustrează pozițiile; mărimile se citesc din modelul analitic și din diagramele metrice, nu direct din proiecția axonometrică. Nu este o certificare formală a întregului curriculum.

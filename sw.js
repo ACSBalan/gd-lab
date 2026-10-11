@@ -1,0 +1,6 @@
+/* Cache statice pentru utilizare offline. Versiunea este exclusiv internă. */
+const CACHE='gd-lab-cache-20261011-d';
+const FILES=['./','./index.html','./styles.css','./manifest.webmanifest','./data/bundle.js','./data/exam.js','./scripts/app.js','./scripts/geometry.js','./scripts/labs.js','./scripts/srs.js','./icons/icon-180.png','./icons/icon-192.png','./icons/icon-512.png',...Array.from({length:14},(_,i)=>'./images/P'+String(i+1).padStart(2,'0')+'.png')];
+self.addEventListener('install',ev=>ev.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',ev=>ev.waitUntil(caches.keys().then(names=>Promise.all(names.filter(n=>n.startsWith('gd-lab-cache-')&&n!==CACHE).map(n=>caches.delete(n)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',ev=>{if(ev.request.method!=='GET')return;let u=new URL(ev.request.url);if(u.origin!==self.location.origin)return;ev.respondWith(caches.match(ev.request).then(cached=>cached||fetch(ev.request).then(resp=>{if(resp.ok){let copy=resp.clone();caches.open(CACHE).then(c=>c.put(ev.request,copy));}return resp;}).catch(()=>ev.request.mode==='navigate'?caches.match('./index.html'):Promise.reject(Error('Resursă offline indisponibilă')))));});
