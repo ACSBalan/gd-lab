@@ -51,6 +51,7 @@ Pe iPhone: deschide adresa în Safari → Partajare → Adaugă la ecranul princ
 
 ## Documentație și proveniență
 
+- [Atribuiri clarificate după auditul final](docs/atribuiri-audit-final.md)
 - [Corecturi și verificări pentru auditul din 12 octombrie 2026](docs/audit-2026-10-12.md)
 - [Raport de validare](docs/validation.md)
 - [Arhitectură, formule și persistență](docs/architecture.md)

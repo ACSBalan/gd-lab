@@ -1339,14 +1339,14 @@
       "front": "Ce este urma laterală a unei drepte?",
       "back": "Punctul w, w″ în care D înțeapă planul lateral W. Proiecțiile ei orizontală și verticală sunt, în epură, pe verticala prin O (manualul: „pe axa secundară OZ”); w″ se află pe W.",
       "source": {
-        "kind": "sarbu",
+        "kind": "sarbu+curs_extins",
         "page": 20
       },
-      "source_text": "Sârbu (2017), p. 20",
+      "source_text": "Sârbu (2017), p. 20; Curs universitar extins, A09 și §3.2",
       "tags": [
         "U03",
         "tip::definitie",
-        "sursa::Sarbu"
+        "sursa::Sarbu+Curs_extins"
       ]
     },
     {
@@ -1560,14 +1560,14 @@
       "front": "Ce caracteristici are o verticală față de planele H, V și W?",
       "back": "Proiecția d pe H se reduce la un punct, care este chiar urma H. Proiecția d′ pe V este perpendiculară pe OX; orice segment vertical apare în adevărată mărime pe V și W. Dacă y≠0, dreapta nu are urmă V; dacă y=0, este conținută în V (fără urmă V unică).",
       "source": {
-        "kind": "sarbu",
+        "kind": "sarbu+curs_extins",
         "page": 23
       },
-      "source_text": "Sârbu (2017), p. 23",
+      "source_text": "Sârbu (2017), p. 23; Curs universitar extins, §3.3",
       "tags": [
         "U03",
         "tip::definitie",
-        "sursa::Sarbu"
+        "sursa::Sarbu+Curs_extins"
       ]
     },
     {
@@ -1594,14 +1594,14 @@
       "front": "Ce caracteristici are dreapta de capăt?",
       "back": "Proiecția d′ pe V se reduce la un punct, care este chiar urma V. Proiecția d pe H este perpendiculară pe OX; orice segment apare în adevărată mărime pe H și W. Dacă z≠0, dreapta nu are urmă H; dacă z=0, este conținută în H (fără urmă H unică).",
       "source": {
-        "kind": "sarbu",
+        "kind": "sarbu+curs_extins",
         "page": 23
       },
-      "source_text": "Sârbu (2017), p. 23",
+      "source_text": "Sârbu (2017), p. 23; Curs universitar extins, §3.3",
       "tags": [
         "U03",
         "tip::definitie",
-        "sursa::Sarbu"
+        "sursa::Sarbu+Curs_extins"
       ]
     },
     {
@@ -1764,14 +1764,14 @@
       "front": "Ce rezultă din paralelismul a două drepte spațiale în epură?",
       "back": "Proiecțiile de același nume sunt paralele ori pot coincide sau degenera. Reciproca nu este automată: la drepte de profil verificăm și W sau vectorii directori.",
       "source": {
-        "kind": "sarbu",
+        "kind": "sarbu+curs_extins",
         "page": 24
       },
-      "source_text": "Sârbu (2017), p. 24",
+      "source_text": "Sârbu (2017), p. 24; Curs universitar extins, §3.4",
       "tags": [
         "U03",
         "tip::definitie",
-        "sursa::Sarbu"
+        "sursa::Sarbu+Curs_extins"
       ]
     },
     {
@@ -1781,14 +1781,14 @@
       "front": "Ce condiție grafică trebuie verificată pentru două drepte concurente?",
       "back": "Proiecțiile punctului comun k pe H și k′ pe V sunt pe aceeași linie de ordine. Pentru reciproca acestui criteriu este necesar ca proiecțiile să aibă intersecții unice și direcțiile ambelor drepte să aibă componenta x nenulă; altfel verificăm W/analitic.",
       "source": {
-        "kind": "sarbu",
+        "kind": "sarbu+curs_extins",
         "page": 24
       },
-      "source_text": "Sârbu (2017), p. 24",
+      "source_text": "Sârbu (2017), p. 24; Curs universitar extins, §3.4",
       "tags": [
         "U03",
         "tip::definitie",
-        "sursa::Sarbu"
+        "sursa::Sarbu+Curs_extins"
       ]
     },
     {
@@ -2409,16 +2409,17 @@
       "unit": 4,
       "type": "definitie",
       "front": "Ce rezultă din paralelismul a două plane în epură?",
-      "back": "Pentru două plane distincte și paralele, urmele de același nume, dacă există ca drepte, sunt paralele și distincte; dacă ambele plane sunt strict paralele cu planul de proiecție, ambele urme lipsesc. Reciproca nu este valabilă fără condiții suplimentare (verifică și W când urmele pe H și V sunt paralele cu OX).",
+      "back": "Pentru două plane distincte și paralele, urmele de același nume, dacă există ca drepte, sunt paralele și distincte; dacă ambele plane sunt strict paralele cu planul de proiecție, ambele urme lipsesc. Reciproca nu este valabilă fără condiții suplimentare (verifică și W când urmele pe H și V sunt paralele cu OX).\nManualul (Sârbu 2017, p. 33) afirmă că reciproca este adevărată. Precizarea din Cursul universitar extins (A12/B12): când urmele pe H și V sunt toate paralele cu OX, paralelismul lor nu este suficient; verifică și W sau normalele planelor. Contraexemplu: P: y+z=1 și Q: y+2z=3 au urmele H/V paralele cu OX, dar se intersectează după dreapta y=−1, z=2.",
       "source": {
-        "kind": "sarbu",
-        "page": 33
+        "kind": "sarbu+curs_extins",
+        "page": 33,
+        "pdf_page": 117
       },
-      "source_text": "Sârbu (2017), p. 33",
+      "source_text": "Sârbu (2017), p. 33; Curs universitar extins, A12/B12 (pp. PDF 117, 120)",
       "tags": [
         "U04",
         "tip::definitie",
-        "sursa::Sarbu"
+        "sursa::Sarbu+Curs_extins"
       ]
     },
     {
@@ -2479,14 +2480,14 @@
       "front": "Cum distingi o dreaptă strict paralelă cu un plan de una conținută în el?",
       "back": "În ambele cazuri direcția dreptei este paralelă cu o direcție a planului. Dacă un punct al dreptei aparține planului, întreaga dreaptă este conținută în plan; altfel este strict paralelă, fără puncte comune.",
       "source": {
-        "kind": "sarbu",
+        "kind": "sarbu+curs_extins",
         "page": 33
       },
-      "source_text": "Sârbu (2017), p. 33",
+      "source_text": "Sârbu (2017), p. 33; Curs universitar extins, §4.4",
       "tags": [
         "U04",
         "tip::definitie",
-        "sursa::Sarbu"
+        "sursa::Sarbu+Curs_extins"
       ]
     },
     {
@@ -4373,9 +4374,9 @@
       "back": "Prismă oblică și piramidă oblică (Fig. 9.2.1, 9.2.2); cilindru și con (Fig. 9.3.1, 9.3.2).",
       "source": {
         "kind": "sarbu",
-        "page": 58
+        "page": 57
       },
-      "source_text": "Sârbu (2017), p. 58",
+      "source_text": "Sârbu (2017), pp. 57–59",
       "tags": [
         "U09",
         "tip::definitie",
