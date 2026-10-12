@@ -47,10 +47,11 @@ Pe iPhone: deschide adresa în Safari → Partajare → Adaugă la ecranul princ
 
 ## Documentație și proveniență
 
+- [Corecturi și verificări pentru auditul din 12 octombrie 2026](docs/audit-2026-10-12.md)
 - [Raport de validare](docs/validation.md)
 - [Arhitectură, formule și persistență](docs/architecture.md)
 - [Acoperirea celor zece unități](docs/curriculum.md)
 
-Baza este arhiva PWA furnizată. Datele, SRS, geometria de referință și ilustrațiile originale sunt verificate prin hash SHA-256. Fișierul HTML autonom încărcat inițial rămâne în repository ca referință; nu este inclus în aplicația publicată. Fișierul CONTROL_CALITATE.txt este documentul de control primit cu arhiva, nu raportul acestei implementări. Nu sunt publicate PDF-urile sursă.
+Baza este arhiva PWA furnizată. Resursele neafectate și datele corectate intenționat au verificări SHA-256; identificatoarele sunt comparate separat cu versiunea inițială, iar calculele laboratoarelor de referință au teste de regresie numerică. Registrul auditului precizează modificările. Fișierul HTML autonom încărcat inițial rămâne în repository ca referință; nu este inclus în aplicația publicată. Fișierul CONTROL_CALITATE.txt este documentul de control primit cu arhiva, nu raportul acestei implementări. Nu sunt publicate PDF-urile sursă.
 
 Convențiile urmează N. D. Sârbu (2017), suportul academic extins și caietul de seminar furnizat. Three.js este distribuit local, cu licența MIT în vendor/LICENSE. Aplicația nu folosește un CDN la rulare.

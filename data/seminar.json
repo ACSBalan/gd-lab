@@ -397,7 +397,8 @@
         "steps": [
           "Ph: x=1; Pv: z=x−1. Abscisa rabătută este x₀=1+√2·(x−1).",
           "A₀=(1+√2;1), B₀=(1+3√2;1), C₀=(1+2√2;3).",
-          "AB=√8≈2,828; AC=BC=√6≈2,449. Triunghi isoscel. Planșa P05."
+          "AB=√8≈2,828; AC=BC=√6≈2,449. Triunghi isoscel. Planșa P05.",
+          "Sensul rabaterii se alege. În Fig. 5.4.3 (Sârbu 2017, p. 42), punctul rabătut este de partea opusă urmei Ph: x₀=1−(x−1)√2. Atunci A₀=(1−√2;1), B₀=(1−3√2;1), C₀=(1−2√2;3). Lungimile reale ale triunghiului sunt aceleași. P05 arată ambele sensuri."
         ],
         "plan": "P05"
       }
@@ -566,7 +567,8 @@
           "Urma Ph: x=−1; Pv: z=0,5x+0,5.",
           "A*=(1;1;1), B*=(4;1;2,5), C*=(2;3;1,5).",
           "La rabatere x₀=−1+(x+1)√1,25: A₀≈(1,236;1); B₀≈(4,590;1); C₀≈(2,354;3).",
-          "Laturi reale: A*B*=√11,25≈3,354; A*C*=√5,25≈2,291; B*C*=3."
+          "Laturi reale: A*B*=√11,25≈3,354; A*C*=√5,25≈2,291; B*C*=3.",
+          "Este corect și sensul opus, ilustrat în Sârbu, Fig. 5.4.3: x₀=−1−(x+1)√1,25, y₀=y. Rezultă A₀≈(−3,236;1), B₀≈(−6,590;1), C₀≈(−4,354;3). Lungimile reale nu se schimbă."
         ],
         "plan": null
       }
@@ -617,7 +619,7 @@
       "id": "8.4",
       "unit": 8,
       "title": "Două suprafețe: pătrundere, contact, smulgere",
-      "data": "Cilindrul vertical infinit: x²+y²=4. Cilindrul orizontal infinit: (y−d)²+z²=1, axă paralelă cu OX prin (0;d;0). Cazuri d=0; 1; 1,5.",
+      "data": "Extensie (suport extins): intersecție calculată analitic. Cilindrul vertical infinit: x²+y²=4. Cilindrul orizontal infinit: (y−d)²+z²=1, axă paralelă cu OX prin (0;d;0). Cazuri d=0; 1; 1,5.",
       "tasks": [
         "1. Schițează poziția celor două axe și secțiunile lor circulare.",
         "2. Pentru fiecare d verifică dacă intersecția constă din două componente, contact intermediar sau o singură componentă.",
@@ -775,7 +777,9 @@
         "steps": [
           "Perete pe hârtie: 6450/50=129 mm lungime, 2800/50=56 mm înălțime.",
           "Ușa: lățime 900/50=18 mm, înălțime 2100/50=42 mm; fereastra: 1200/50=24 mm, înălțime 24 mm; parapet 900/50=18 mm.",
-          "Lanțul orizontal: 0,90+0,90+1,50+1,20+1,95=6,45 m. Cote de nivel ±0,00, +0,90, +2,10, +2,80. Planșa P14."
+          "Înscrierea lanțului de cote: 90 | 90 | 1,50 | 1,20 | 1,95; total 6,45. Sub 1,00 m în cm; de la 1,00 m în metri cu două zecimale (Sârbu 2017, p. 68).",
+          "Control aritmetic separat: 0,90 + 0,90 + 1,50 + 1,20 + 1,95 = 6,45 m.",
+          "Cote de nivel: ±0,00, +0,90, +2,10, +2,80; simboluri triunghiulare. Sârbu 2017, p. 69 și Fig. 10.2.11 notează reperul ±0,00, la fel ca suportul extins. Planșa P14."
         ],
         "plan": "P14"
       }

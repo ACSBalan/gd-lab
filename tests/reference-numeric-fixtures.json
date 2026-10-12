@@ -1,0 +1,326 @@
+[
+  {
+    "unit": 1,
+    "params": {
+      "sh": 6
+    },
+    "answer": 4,
+    "type": "numeric"
+  },
+  {
+    "unit": 1,
+    "params": {
+      "sh": 5
+    },
+    "answer": 5,
+    "type": "numeric"
+  },
+  {
+    "unit": 1,
+    "params": {
+      "sh": 9
+    },
+    "answer": 3,
+    "type": "numeric"
+  },
+  {
+    "unit": 2,
+    "params": {
+      "x": 2,
+      "y": -1,
+      "z": 3
+    },
+    "answer": "II",
+    "type": "choice"
+  },
+  {
+    "unit": 2,
+    "params": {
+      "x": 1,
+      "y": -1,
+      "z": 3
+    },
+    "answer": "II",
+    "type": "choice"
+  },
+  {
+    "unit": 2,
+    "params": {
+      "x": 5,
+      "y": -1,
+      "z": 3
+    },
+    "answer": "II",
+    "type": "choice"
+  },
+  {
+    "unit": 2,
+    "params": {
+      "x": 2,
+      "y": -3,
+      "z": 3
+    },
+    "answer": "II",
+    "type": "choice"
+  },
+  {
+    "unit": 2,
+    "params": {
+      "x": 2,
+      "y": 3,
+      "z": 3
+    },
+    "answer": "I",
+    "type": "choice"
+  },
+  {
+    "unit": 2,
+    "params": {
+      "x": 2,
+      "y": -1,
+      "z": -3
+    },
+    "answer": "III",
+    "type": "choice"
+  },
+  {
+    "unit": 2,
+    "params": {
+      "x": 2,
+      "y": -1,
+      "z": 3
+    },
+    "answer": "II",
+    "type": "choice"
+  },
+  {
+    "unit": 3,
+    "params": {
+      "dz": 2
+    },
+    "answer": 1.4,
+    "type": "numeric"
+  },
+  {
+    "unit": 3,
+    "params": {
+      "dz": 1
+    },
+    "answer": 0.8,
+    "type": "numeric"
+  },
+  {
+    "unit": 3,
+    "params": {
+      "dz": 4
+    },
+    "answer": 1.7,
+    "type": "numeric"
+  },
+  {
+    "unit": 4,
+    "params": {
+      "k": 6
+    },
+    "answer": 6,
+    "type": "numeric"
+  },
+  {
+    "unit": 4,
+    "params": {
+      "k": 3
+    },
+    "answer": 3,
+    "type": "numeric"
+  },
+  {
+    "unit": 4,
+    "params": {
+      "k": 8
+    },
+    "answer": 8,
+    "type": "numeric"
+  },
+  {
+    "unit": 5,
+    "params": {
+      "dz": 2
+    },
+    "answer": 5.385164807134504,
+    "type": "numeric"
+  },
+  {
+    "unit": 5,
+    "params": {
+      "dz": 1
+    },
+    "answer": 5.0990195135927845,
+    "type": "numeric"
+  },
+  {
+    "unit": 5,
+    "params": {
+      "dz": 5
+    },
+    "answer": 7.0710678118654755,
+    "type": "numeric"
+  },
+  {
+    "unit": 6,
+    "params": {
+      "shape": "prism"
+    },
+    "answer": "6",
+    "type": "choice"
+  },
+  {
+    "unit": 6,
+    "params": {
+      "shape": "prism"
+    },
+    "answer": "6",
+    "type": "choice"
+  },
+  {
+    "unit": 6,
+    "params": {
+      "shape": "pyramid"
+    },
+    "answer": "5",
+    "type": "choice"
+  },
+  {
+    "unit": 7,
+    "params": {
+      "shape": "sphere",
+      "d": 1
+    },
+    "answer": 1.7320508075688772,
+    "type": "numeric"
+  },
+  {
+    "unit": 7,
+    "params": {
+      "shape": "sphere",
+      "d": 1
+    },
+    "answer": 1.7320508075688772,
+    "type": "numeric"
+  },
+  {
+    "unit": 7,
+    "params": {
+      "shape": "cylinder",
+      "d": 1
+    },
+    "answer": 4,
+    "type": "numeric"
+  },
+  {
+    "unit": 7,
+    "params": {
+      "shape": "cone",
+      "d": 1
+    },
+    "answer": 1.5,
+    "type": "numeric"
+  },
+  {
+    "unit": 7,
+    "params": {
+      "shape": "sphere",
+      "d": 0
+    },
+    "answer": 2,
+    "type": "numeric"
+  },
+  {
+    "unit": 7,
+    "params": {
+      "shape": "sphere",
+      "d": 2
+    },
+    "answer": 0,
+    "type": "numeric"
+  },
+  {
+    "unit": 8,
+    "params": {
+      "k": 0.5
+    },
+    "answer": 1.3416407864998738,
+    "type": "numeric"
+  },
+  {
+    "unit": 8,
+    "params": {
+      "k": 0.2
+    },
+    "answer": 1.2237646832622684,
+    "type": "numeric"
+  },
+  {
+    "unit": 8,
+    "params": {
+      "k": 1.2
+    },
+    "answer": 1.8744599222175968,
+    "type": "numeric"
+  },
+  {
+    "unit": 9,
+    "params": {
+      "r": 1.2
+    },
+    "answer": 7.5398223686155035,
+    "type": "numeric"
+  },
+  {
+    "unit": 9,
+    "params": {
+      "r": 0.8
+    },
+    "answer": 5.026548245743669,
+    "type": "numeric"
+  },
+  {
+    "unit": 9,
+    "params": {
+      "r": 2
+    },
+    "answer": 12.566370614359172,
+    "type": "numeric"
+  },
+  {
+    "unit": 10,
+    "params": {
+      "den": 50
+    },
+    "answer": 129,
+    "type": "numeric"
+  },
+  {
+    "unit": 10,
+    "params": {
+      "den": "20"
+    },
+    "answer": 322.5,
+    "type": "numeric"
+  },
+  {
+    "unit": 10,
+    "params": {
+      "den": "50"
+    },
+    "answer": 129,
+    "type": "numeric"
+  },
+  {
+    "unit": 10,
+    "params": {
+      "den": "100"
+    },
+    "answer": 64.5,
+    "type": "numeric"
+  }
+]
