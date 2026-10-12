@@ -163,7 +163,7 @@ function compute(unit,v,angle=42){let models=[],note='',question=null,details=''
   question=choiceQuestion('Unde se află punctul N?', ['I','II','III','IV','pe H','pe V','pe OX'],region,'Analizezi mai întâi y=0 și z=0 (cazuri pe plane sau pe OX), apoi semnele lui y și z. x nu determină diedrul.');
  } else if(unit===3){
   const A=[2,1,.6],B=[4,3,.6+(+v.dz)],H=intersect(A,B,2),Vt=intersect(A,B,1),Wt=intersect(A,B,0),dd=+v.dz;
-  out2=epo([[A,'M'],[B,'N'],[H,'H'],[Vt,'V']],{lines:[[Wt,B,TX]],labelOffsets:{'h′':[-22,-14],'v′':[15,30],'h':[-20,21],'v':[8,-10]},more:[({H:ph,V:pv})=>sl(19,29,'d și d′ sunt prelungite până la urmele H și V',INK,11)]});
+  out2=epo([[A,'M'],[B,'N'],[H,'H'],[Vt,'V']],{scale:Math.min(45,120/(.6+dd)),lines:[[Wt,B,TX]],labelOffsets:{'h′':[-16,-8],'v′':[6,16],'h':[-14,16],'v':[6,-8],'n':[6,-12]}});
   out3=fig(isoBasic(iso,{extent:4,top:5})+path([Wt,B].map(iso),TX,2.4)+circle(iso(H),5,OK)+circle(iso(Vt),5,V)+circle(iso(A),5,TX)+circle(iso(B),5,TX));
   details=`M=(2;1;0,6) m; N=(4;3;${fmt(B[2])}) m. D(t)=(2+2t;1+2t;0,6+${fmt(dd)}t). Impui z=0 pentru H, y=0 pentru V și x=0 pentru W. H=(${fmt(H[0])};${fmt(H[1])};0) m; V=(${fmt(Vt[0])};0;${fmt(Vt[2])}) m; W=(0;−1;${fmt(Wt[2])}) m.`;
   question=numberQuestion('Care este abscisa x a urmei orizontale H (m)?',H[0],.02,`Din z(t)=0,6+${fmt(dd)}t=0 obții t=−0,6/${fmt(dd)}; înlocuiești în x(t)=2+2t și găsești x_H=${fmt(H[0])} m.`);
@@ -186,7 +186,7 @@ function compute(unit,v,angle=42){let models=[],note='',question=null,details=''
      +sl(123,288,'L_H = 5 m',TX,13)+sl(c[0]+9,(b[1]+c[1])/2,'Δz = '+fmt(dz)+' m',V,12)
      +sl(118,52,'L = '+fmt(L)+' m',INK,15)+sl(20,308,'Diagramă metrică: 1 pătrat = 1 m, identic pe ambele axe',INK,11));
   let p=isoFactory(angle,27,[205,212]);out3=fig(isoBasic(p,{extent:5,top:6})+path([[0,0,0],[3,4,dz]].map(p),TX,3)+ln(p([3,4,0]),p([3,4,dz]),V,2,'5 4')+ln(p([0,0,0]),p([3,4,0]),INK,1.5,'4 4'));
-  details=`Diferențe de coordonate: Δx=3 m, Δy=4 m, Δz=${fmt(dz)} m. Proiecția pe H: L_H=√(3²+4²)=5 m. Catetele diagramei au aceeași scară de 39 px/m. Lungimea reală L=√(25+${fmt(dz*dz)})=${fmt(L)} m.`;
+  details=`Diferențe de coordonate: Δx=3 m, Δy=4 m, Δz=${fmt(dz)} m. Proiecția pe H: L_H=√(3²+4²)=5 m. Catetele diagramei sunt reprezentate la aceeași scară. Lungimea reală L=√(25+${fmt(dz*dz)})=${fmt(L)} m.`;
   question=numberQuestion('Care este lungimea reală a segmentului (m)?',L,.025,`Teorema lui Pitagora: L=√(Δx²+Δy²+Δz²)=√(25+${fmt(dz*dz)})=${fmt(L)} m; nu confunda cu proiecția L_H=5 m.`);
  } else if(unit===6){
   const base=[[1,1,0],[3,1,0],[3,2,0],[1,2,0]],prism=v.shape==='prism';
@@ -195,7 +195,7 @@ function compute(unit,v,angle=42){let models=[],note='',question=null,details=''
   for(let i=0;i<4;i++)edges.push([i,(i+1)%4]);
   if(prism){faces.push([0,1,2,3],[4,5,6,7]);for(let i=0;i<4;i++){edges.push([i+4,(i+1)%4+4],[i,i+4]);faces.push([i,(i+1)%4,(i+1)%4+4,i+4]);}}
   else{faces.push([0,1,2,3]);for(let i=0;i<4;i++){edges.push([i,4]);faces.push([i,(i+1)%4,4]);}}
-  out3=fig(isoBasic(p,{extent:3,top:3})+edges.map(([i,j])=>ln(p(vertices[i]),p(vertices[j]),TX,2.3)).join('')+base.map((a,i)=>circle(p(a),4,TX)+sl(...p(a),' '+('ABCD'[i]),TX,11)).join('')+upper.map((a,i)=>circle(p(a),5,V)+sl(...p(a),' '+(prism?['A₁','B₁','C₁','D₁'][i]:'S'),V,12)).join(''));
+  out3=fig(isoBasic(p,{extent:3,top:3})+edges.map(([i,j])=>ln(p(vertices[i]),p(vertices[j]),TX,2.3)).join('')+base.map((a,i)=>circle(p(a),4,TX)+sl(p(a)[0]+9,p(a)[1]-10,'ABCD'[i],TX,11)).join('')+upper.map((a,i)=>circle(p(a),5,V)+sl(p(a)[0]+9,p(a)[1]-10,prism?['A₁','B₁','C₁','D₁'][i]:'S',V,12)).join(''));
   const C=[330,150],s=31;
   out2=fig(epureAxes(C,s)+vertices.map(t=>ln([C[0]-s*t[0],C[1]+s*t[1]],[C[0]-s*t[0],C[1]-s*t[2]],INK,.8,'3 5')).join('')
     +hiddenLines(vertices,edges,faces,'H')+hiddenLines(vertices,edges,faces,'V')
@@ -246,7 +246,7 @@ function compute(unit,v,angle=42){let models=[],note='',question=null,details=''
   ep+=sl(19,34,'H (jos) / V (sus): OX comună',INK,12)+sl(19,309,'Grilă: 1 pătrat = 1 m · secțiune: portocaliu',INK,11);
   out2=fig(ep);
   if(shape==='sphere'){
-   details=`Sferă cu R=2 m și centru G=(3;2;3) m. Planul orizontal de secțiune este la d=${fmt(d)} m deasupra centrului: z=${fmt(z0)} m. Raza cercului: r=√(R²−d²)=√(4−${fmt(d*d)})=${fmt(r)} m. Pe H: cerc; pe V: segment de ${fmt(2*r)} m la cota z=${fmt(z0)} m.`;
+   details=`Sferă cu R=2 m și centru G=(3;2;3) m. Planul orizontal de secțiune este la d=${fmt(d)} m deasupra centrului: z=${fmt(z0)} m. Raza cercului: r=√(R²−d²)=√(4−${fmt(d*d)})=${fmt(r)} m. ${Math.abs(d)===R?'Planul este tangent; secțiunea se reduce la un punct.':'Pe H: cerc; pe V: segment de '+fmt(2*r)+' m la cota z='+fmt(z0)+' m.'}`;
    question=numberQuestion('Care este raza secțiunii sferei (m)?',r,.025,`r²+d²=R²; pentru R=2 m și d=${fmt(d)} m, r=√(4−${fmt(d*d)})=${fmt(r)} m.`);
   }else if(shape==='cylinder'){
    details=`Cilindru circular drept cu R=2 m, h=4 m. Plan de nivel la cota z=${fmt(z0)} m: secțiunea este un cerc de rază 2 m. Pe H cercul se suprapune peste cel al bazei; pe V apare segmentul orizontal la z=${fmt(z0)} m (lungime 4 m).`;
@@ -265,7 +265,7 @@ function compute(unit,v,angle=42){let models=[],note='',question=null,details=''
      +ln(H(a),VV(a),INK,.8,'3 5')+ln(H(b),VV(b),INK,.8,'3 5')
      +sl(19,28,'P: z = '+fmt(k)+'x + 0,30 (m)',INK,13)+sl(19,309,'Grilă: 1 pătrat = 1 m · ambele proiecții: același OX',INK,11));
   const minor=R,major=R*Math.sqrt(1+k*k);
-  details=`Cilindru circular vertical: axă prin (3;2) m, R=1,20 m; plan secant P: z=${fmt(k)}x+0,30 (m). Pe H: cerc cu centrul (3;2) m. Pe V: segment din urma P, pentru x∈[1,80;4,20] m. Semiaxa mică b=1,20 m; semiaxa mare a=R√(1+k²)=${fmt(major)} m. Centrul și axele din desen folosesc aceeași origine (${C[0]};${C[1]}) SVG.`;
+  details=`Cilindru circular vertical: axă prin (3;2) m, R=1,20 m; plan secant P: z=${fmt(k)}x+0,30 (m). Pe H: cerc cu centrul (3;2) m. Pe V: segment din urma P, pentru x∈[1,80;4,20] m. Semiaxa mică b=1,20 m; semiaxa mare a=R√(1+k²)=${fmt(major)} m. Proiecțiile folosesc aceeași origine și aceeași linie de pământ.`;
   question=numberQuestion('Care este semiaxa mare a secțiunii (m)?',major,.025,`a=R√(1+k²)=1,20·√(1+${fmt(k*k)})=${fmt(major)} m; adevărata mărime diferă de cercul proiectat pe H.`);
  } else if(unit===9){
   const R=+v.r,smax=2*pi*R,hAt=u=>1.8+.5*R*Math.cos(u/R),hmax=1.8+.5*R,hmin=1.8-.5*R;
@@ -278,7 +278,7 @@ function compute(unit,v,angle=42){let models=[],note='',question=null,details=''
   const p=isoFactory(angle,41,[216,223]),ring=(z,r)=>Array.from({length:145},(_,i)=>[3+r*Math.cos(2*pi*i/144),2+r*Math.sin(2*pi*i/144),z]);
   const cut=Array.from({length:145},(_,i)=>{let a=2*pi*i/144;return [3+R*Math.cos(a),2+R*Math.sin(a),1.8+.5*R*Math.cos(a)]});
   out3=fig(isoBasic(p,{extent:5,top:5})+path(ring(0,R).map(p),TX,1.7)+path(cut.map(p),V,3)+[0,36,72,108].map(i=>ln(p(ring(0,R)[i]),p(cut[i]),INK,1.2)).join(''));
-  details=`Cilindru: axa prin (3;2) m, R=${fmt(R)} m. Plan: z=0,5x+0,3 (m). La x=3+R cosθ, cota z=1,8+0,5R cosθ (m). Pe desfășurare s=Rθ; L=2πR=${fmt(smax)} m, înălțimile între ${fmt(hmin)} și ${fmt(hmax)} m. Ambele direcții ale desenului au aceeași scară (${fmt(scale)} px/m în modelul SVG).`;
+  details=`Cilindru: axa prin (3;2) m, R=${fmt(R)} m. Plan: z=0,5x+0,3 (m). La x=3+R cosθ, cota z=1,8+0,5R cosθ (m). Pe desfășurare s=Rθ; L=2πR=${fmt(smax)} m, înălțimile între ${fmt(hmin)} și ${fmt(hmax)} m. Ambele direcții ale desenului au aceeași scară.`;
   question=numberQuestion('Care este lățimea totală a desfășurării (m)?',smax,.03,`L=2πR=2π×${fmt(R)}=${fmt(smax)} m. Lățimea și înălțimea sunt trasate la aceeași scară.`);
  }else if(unit===10){
   const den=+v.den,wall=6450/den,height=2800/den;

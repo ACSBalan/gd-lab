@@ -10,14 +10,14 @@
   "units": [
     {
       "unit": 1,
-      "title": "Introducere: sisteme de proiecție",
+      "title": "Introducere",
       "sarbu_pages": "7–13",
       "book_pdf_pages": "9–15",
       "card_count": 32
     },
     {
       "unit": 2,
-      "title": "Punctul: diedre, epură, simetrie",
+      "title": "Punctul",
       "sarbu_pages": "14–18",
       "book_pdf_pages": "16–21",
       "card_count": 36
@@ -45,21 +45,21 @@
     },
     {
       "unit": 6,
-      "title": "Poliedre: prisma și piramida",
+      "title": "Reprezentarea corpurilor geometrice",
       "sarbu_pages": "44–48",
       "book_pdf_pages": "68–74",
       "card_count": 25
     },
     {
       "unit": 7,
-      "title": "Cilindrul, conul și sfera",
+      "title": "Reprezentarea corpurilor de rotație",
       "sarbu_pages": "49–52",
       "book_pdf_pages": "75–80",
       "card_count": 21
     },
     {
       "unit": 8,
-      "title": "Secțiuni plane și intersecții de suprafețe",
+      "title": "Secțiuni cu plane. Intersecția suprafețelor",
       "sarbu_pages": "53–56",
       "book_pdf_pages": "81–88",
       "card_count": 23
@@ -73,7 +73,7 @@
     },
     {
       "unit": 10,
-      "title": "Desen tehnic",
+      "title": "Scopul și importanța desenului tehnic",
       "sarbu_pages": "61–71",
       "book_pdf_pages": "99–110",
       "card_count": 74
@@ -3039,7 +3039,7 @@
       "unit": 5,
       "type": "procedeu",
       "front": "Cum rabați pe H un punct M dintr-un plan de capăt?",
-      "back": "1. Iei cu compasul ρ = |Px m′| de pe Pv (este deja adevărata mărime).\n2. Prin m duci paralela la OX.\n3. Pe ea măsori ρ de la Ph → M₀.",
+      "back": "1. Iei cu compasul ρ = |Px m′| de pe Pv (este deja adevărata mărime).\n2. Prin m duci paralela la OX.\n3. Pe ea măsori ρ de la Ph → M₀.\nSensul rabaterii se alege: de partea opusă urmei Ph față de m, ca în Sârbu, Fig. 5.4.3, sau de aceeași parte. Ambele păstrează lungimile reale.",
       "source": {
         "kind": "curs_extins",
         "pdf_page": 62
@@ -3056,7 +3056,7 @@
       "unit": 5,
       "type": "formula",
       "front": "Care e formula de rabatere pe H pentru planul de capăt z = kx + b?",
-      "back": "x₀ = x_h + (x − x_h)·√(1 + k²), y₀ = y, unde x_h = −b/k este abscisa urmei Ph.",
+      "back": "Pentru k ≠ 0: x₀ = xₕ ± (x − xₕ)√(1 + k²), y₀ = y, unde xₕ = −b/k. Sensul se alege. În Fig. 5.4.3 (Sârbu, p. 42), M₀ este de partea opusă urmei Ph față de m: x₀ = xₕ − (x − xₕ)√(1 + k²). Lungimile reale sunt aceleași. Dacă k=0, planul este de nivel; această definiție a lui xₕ nu se aplică.",
       "source": {
         "kind": "curs_extins",
         "pdf_page": 62
@@ -3346,16 +3346,16 @@
       "unit": 6,
       "type": "definitie",
       "front": "De ce trebuie analizate cu atenție muchiile din interiorul conturului aparent?",
-      "back": "Vizibilitatea se decide comparând puncte de pe aceeași proiectantă: pe H, privit din +Z, se vede punctul cu cota mai mare; pe V, privit din +Y, cel cu depărtarea mai mare. Muchiile acoperite se desenează întrerupt, chiar când se proiectează în interiorul conturului aparent.",
+      "back": "Vizibilitatea se decide comparând puncte de pe aceeași proiectantă: pe H, privit din +Z, se vede punctul cu cota mai mare; pe V, privit din +Y, cel cu depărtarea mai mare. Muchiile acoperite se desenează întrerupt, chiar când se proiectează în interiorul conturului aparent.\nManualul (Sârbu 2017, p. 45) formulează: muchiile din interiorul conturului aparent, pe H, sunt vizibile. Regula se aplică figurii din curs. În general, vizibilitatea se decide comparând cotele pe H și depărtările pe V (suport extins).",
       "source": {
-        "kind": "sarbu",
+        "kind": "sarbu+curs_extins",
         "page": 45
       },
-      "source_text": "Sârbu (2017), p. 45",
+      "source_text": "Sârbu (2017), p. 45; suport extins, regula generală de vizibilitate",
       "tags": [
         "U06",
         "tip::definitie",
-        "sursa::Sarbu"
+        "sursa::Sarbu+Curs_extins"
       ]
     },
     {
@@ -3363,16 +3363,17 @@
       "unit": 6,
       "type": "capcana",
       "front": "„Toate muchiile din interiorul conturului pe H sunt vizibile” este o regulă generală?",
-      "back": "Nu. Vizibilitatea se decide separat pentru fiecare proiecție, comparând adâncimile punctelor care se suprapun (de ex. la o prismă oblică o muchie a bazei de jos poate fi ascunsă pe H).",
+      "back": "Nu. Vizibilitatea se decide separat pentru fiecare proiecție, comparând adâncimile punctelor care se suprapun (de ex. la o prismă oblică o muchie a bazei de jos poate fi ascunsă pe H).\nManualul (Sârbu 2017, p. 45) formulează: muchiile din interiorul conturului aparent, pe H, sunt vizibile. Regula se aplică figurii din curs. În general, vizibilitatea se decide comparând cotele pe H și depărtările pe V (suport extins).",
       "source": {
-        "kind": "curs_extins",
-        "pdf_page": 68
+        "kind": "sarbu+curs_extins",
+        "pdf_page": 68,
+        "page": 45
       },
-      "source_text": "Curs universitar extins, p. PDF 68",
+      "source_text": "Sârbu (2017), p. 45; suport extins, regula generală de vizibilitate",
       "tags": [
         "U06",
         "tip::capcana",
-        "sursa::Curs_extins"
+        "sursa::Sarbu+Curs_extins"
       ]
     },
     {
@@ -4266,7 +4267,7 @@
       "unit": 8,
       "type": "capcana",
       "front": "În cazul intermediar, se ating ramurile curbei cu aceeași tangentă?",
-      "back": "Nu neapărat. Ce au comun e planul tangent la cele două suprafețe; curba are acolo un punct dublu, iar ramurile se pot încrucișa cu tangente diferite.",
+      "back": "Nu neapărat. În configurațiile din curs, ramurile se întâlnesc în acel punct; tangentele lor pot fi diferite. Existența unui plan tangent comun celor două suprafețe nu implică automat un nod al curbei (suport extins V2.1, Anexa A, A27).",
       "source": {
         "kind": "curs_extins",
         "pdf_page": 82
@@ -4522,7 +4523,7 @@
       "unit": 9,
       "type": "formula",
       "front": "Cilindru drept tăiat de un plan înclinat: cum arată marginea în desfășurare?",
-      "back": "O curbă cosinusoidală, nu o dreaptă: z(s) = h₀ + kR·cos(s/R), cu s = Rθ lungimea desfășurată.",
+      "back": "O curbă cosinusoidală: z(s) = h₀ + kR·cos(s/R). Cilindrul are axa OZ, x = R cos θ; planul secant este z = h₀ + kx; s = Rθ se măsoară de la generatoarea cu x = R. h₀ este cota planului pe axa cilindrului, k panta, R raza, iar θ unghiul în radiani.",
       "source": {
         "kind": "curs_extins",
         "pdf_page": 90
@@ -4556,7 +4557,7 @@
       "unit": 9,
       "type": "explicativ",
       "front": "De ce lungimea desfășurată a arcului de cilindru este Rθ (și nu 2Rθ)?",
-      "back": "Pe manta, dl² = R²dθ² + dz²; cu s = Rθ devine dl² = ds² + dz², deci lungimile se păstrează.",
+      "back": "Extensie (suport extins), justificare metrică: Pe manta, dl² = R²dθ² + dz²; cu s = Rθ devine dl² = ds² + dz², deci lungimile se păstrează.",
       "source": {
         "kind": "curs_extins",
         "pdf_page": 96
@@ -5883,7 +5884,7 @@
       "unit": 10,
       "type": "definitie",
       "front": "Ce sunt cotele de nivel absolute și relative?",
-      "back": "Absolute: reperul este nivelul Mării Negre.\nRelative: reperul este pardoseala finită a parterului corpului principal (cota zero, notată +0,00 în manual).",
+      "back": "Absolute: reperul este nivelul Mării Negre.\nRelative: reperul este pardoseala finită a parterului corpului principal: cota zero, notată ±0,00 (Sârbu, p. 69, Fig. 10.2.11).",
       "source": {
         "kind": "sarbu",
         "page": 69
