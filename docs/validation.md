@@ -1,6 +1,6 @@
 # Technical validation report
 
-Validation executed on 11 October 2026 (Europe/London). This report distinguishes measured results from device checks that remain outstanding.
+Validation executed on 11–12 October 2026 (Europe/London). This report distinguishes measured results from device checks that remain outstanding.
 
 ## Baseline and preservation
 
@@ -43,6 +43,8 @@ The viewport test uses 390×844 CSS pixels and checks horizontal overflow plus a
 Tests verify that existing scheduled card progress survives studio navigation, a construction survives navigation and reload, and JSON export/import preserves construction points, card scheduling, exercise notes and daily settings. Invalid JSON is rejected without altering stored progress. Original identifiers and the SRS implementation remain byte-identical.
 
 The offline test waits for the service worker to control the page, confirms all 14 illustrations and the local Three.js module are cached, disables the browser network, reloads, and opens all ten laboratories. A reference PNG is then fetched successfully from the offline cache. No external runtime CDN is used.
+
+The first GitHub Linux run passed the mathematical tests and 10 of 11 browser tests. Its invalid-import assertion also compared the incidental autosave timestamp, which changed while the actual progress remained identical. That assertion now compares every progress field while excluding only `savedAt`; no geometry or persistence requirement was removed. The subsequent Actions run is the authoritative CI result.
 
 ## Scope and remaining device verification
 
