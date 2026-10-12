@@ -27,7 +27,15 @@ test('M1: course coordinates map signs independently in H, V and W',()=>{
  const a=A.build('point',A.defaults());for(const [name,p,expected] of [['n',[2,2],[-2,-2]],['n′',[2,3],[-2,3]],['n″',[2,3],[2,3]]])assert.deepEqual(A.coordinateConvert(p,A.coordinateFrame(a,name).kind),expected);
 });
 test('M3: the coincident BF/CG silhouette is drawn continuously',()=>{const a=A.build('prism',A.defaults());assert.ok(a.choice.answer.startsWith('Continuu'));assert.match(a.choice.reason,/p. 45/);});
-test('M6: pointer tolerance follows pixels while numeric points retain metric precision',()=>{const a=A.build('point',A.defaults()),w=solved(a);w.points.n[0]+=.25;assert.equal(V.check(a,w).ok,false);assert.equal(V.check(a,w,{unitsPerPixel:1/21}).ok,true);w.exactPoints={n:true};assert.equal(V.check(a,w,{unitsPerPixel:1/21}).ok,false);});
+test('M6: pointer accuracy is capped and coarse zoom cannot validate a shortened rabatment radius',()=>{
+ const a=A.build('rabat',A.defaults('rabat')),w=solved(a);w.exactPoints=Object.fromEntries(a.targets.map(t=>[t.label,t.label!=='n₀']));
+ for(const unitsPerPixel of [1/21,1/16,.01]){w.points['n₀']=[1,-2];const result=V.check(a,w,{unitsPerPixel}),point=result.results.find(r=>r.label==='n₀');assert.equal(point.ok,false);assert.ok(point.tolerance<=.15);assert.ok(Math.abs(point.error-(Math.sqrt(5)-2))<1e-9);}
+ w.points['n₀']=V.expected(a.targets.at(-1).rule);assert.equal(V.check(a,w,{unitsPerPixel:1/21}).ok,false);assert.match(V.check(a,w,{unitsPerPixel:1/21}).results.at(-1).text,/Mărește planșa pentru precizie/);assert.equal(V.check(a,w,{unitsPerPixel:.01}).ok,true);
+ w.exactPoints['n₀']=true;assert.equal(V.check(a,w,{unitsPerPixel:1/16}).ok,true);w.points['n₀'][0]+=.13;assert.equal(V.check(a,w,{unitsPerPixel:1/16}).ok,false);
+ for(const unitsPerPixel of [1e-3,.01875,.02,1,100]){assert.ok(V.precision(a,unitsPerPixel).tolerance<=.15);assert.ok(V.precision({board:'paper'},unitsPerPixel).tolerance<=.5);}
+});
+
+test('GD-U10-070 preserves the zero datum actually printed in Sârbu',()=>{const c=JSON.parse(fs.readFileSync('data/cards.json','utf8')).cards.find(c=>c.id==='GD-U10-070');assert.match(c.back,/±0,00 \(Sârbu, p\. 69, Fig\. 10\.2\.11\)/);assert.doesNotMatch(c.back,/notată \+0,00/);});
 test('m1/m4/m5/m6: left labels, zero dimensions, complete trace notation and interior piercing point',()=>{
  for(const id of ['sphere','cone','cone-cut']){const a=A.build(id,A.defaults()),l=V.expected(a.targets.find(t=>t.label==='l′').rule),r=V.expected(a.targets.find(t=>t.label==='r′').rule);assert.ok(l[0]<r[0],id);}
  const zero=A.build('scale',{...A.defaults(),z:0});assert.equal(zero.targets.length,0);assert.ok(zero.notes[0].includes('nu a fost înlocuită'));

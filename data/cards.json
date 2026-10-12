@@ -5884,7 +5884,7 @@
       "unit": 10,
       "type": "definitie",
       "front": "Ce sunt cotele de nivel absolute și relative?",
-      "back": "Absolute: reperul este nivelul Mării Negre.\nRelative: reperul este pardoseala finită a parterului corpului principal (cota zero, notată +0,00 în manual).",
+      "back": "Absolute: reperul este nivelul Mării Negre.\nRelative: reperul este pardoseala finită a parterului corpului principal: cota zero, notată ±0,00 (Sârbu, p. 69, Fig. 10.2.11).",
       "source": {
         "kind": "sarbu",
         "page": 69

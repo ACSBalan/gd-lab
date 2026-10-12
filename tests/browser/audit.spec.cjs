@@ -1,13 +1,26 @@
 const {test,expect}=require('@playwright/test');
-test('M6: a real touch 6 px from the target passes at 360 px; 12 px fails',async({browser})=>{
- const context=await browser.newContext({viewport:{width:360,height:800},hasTouch:true});
- try{const page=await context.newPage();await page.goto('http://127.0.0.1:4173/gd-lab/');await page.waitForFunction(()=>!!window.GD_STUDIO);await page.locator('.mobile-tabs [data-route="lab"]').click();await page.locator('#page > .chips [data-unit="2"]').click();await page.locator('.st-coordinate').evaluate(e=>e.open=true);
- for(const [label,x,y] of [['n',2,2],['n′',2,3],['n″',2,3]]){await page.locator('#st-label').selectOption(label);await page.locator('#st-u').fill(String(x));await page.locator('#st-v').fill(String(y));await page.locator('[data-st="place"]').click();}
- await page.locator('#st-label').selectOption('n');await page.locator('#st-board').scrollIntoViewIfNeeded();const exact=await page.locator('#st-board circle[data-point="n"]').evaluate(c=>{const p=c.ownerSVGElement.createSVGPoint();p.x=+c.getAttribute('cx');p.y=+c.getAttribute('cy');const q=p.matrixTransform(c.getScreenCTM());return {x:q.x,y:q.y};});
- await page.touchscreen.tap(exact.x+6,exact.y);await page.locator('[data-st="check"]').click();await expect(page.locator('#st-feedback')).toContainText('Construcție validată.');expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('gd-lab-student-state')).constructions.point.work.exactPoints.n)).toBe(false);
- await page.locator('#st-board').scrollIntoViewIfNeeded();const shifted=await page.locator('#st-board circle[data-point="n"]').boundingBox();await page.touchscreen.tap(shifted.x+shifted.width/2+6,shifted.y+shifted.height/2);await page.locator('[data-st="check"]').click();await expect(page.locator('#st-feedback')).toContainText('n: deplasează');await expect(page.locator('#st-feedback')).toContainText('Eroare');
+for(const width of [1280,360])test('M6: touch rabatment with rho=2 is rejected at '+width+'px, then zoom or numeric entry enables precision',async({browser})=>{
+ const context=await browser.newContext({viewport:{width,height:900},hasTouch:true});
+ try{const page=await context.newPage();await page.goto('http://127.0.0.1:4173/gd-lab/');await page.waitForFunction(()=>!!window.GD_STUDIO);await page.locator('[data-route="lab"]:visible').first().click();await page.locator('#page > .chips [data-unit="5"]').click();await page.locator('.st-coordinate').evaluate(e=>e.open=true);
+ const place=async(label,x,y)=>{await page.locator('#st-label').selectOption(label);await page.locator('#st-u').fill(String(x));await page.locator('#st-v').fill(String(y));await page.locator('[data-st="place"]').click();};
+ const touch=async()=>{await page.locator('#st-board svg').evaluate(e=>e.scrollIntoView({block:'center'}));const c=await page.locator('#st-board circle[data-point="n₀"]').boundingBox();await page.touchscreen.tap(c.x+c.width/2,c.y+c.height/2);};
+ for(const [label,x,y] of [['n',3,2],['n′',3,1],['Pₓ',1,0],['n₀',-1,2]])await place(label,x,y);
+ await touch();await expect.poll(()=>page.evaluate(()=>JSON.parse(localStorage.getItem('gd-lab-student-state')||'{}').constructions?.rabat?.work?.exactPoints?.['n₀'])).toBe(false);await page.locator('[data-st="check"]').click();await expect(page.locator('#st-feedback')).toContainText('n₀: deplasează');await expect(page.locator('#st-feedback')).toContainText('Mărește planșa pentru precizie');await expect(page.locator('#st-feedback')).not.toContainText('n₀: poziție corectă');expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('gd-lab-student-state')).constructionChecks.rabat)).toBeUndefined();
+ await place('n₀',1-Math.sqrt(5),2);await page.locator('[data-st="check"]').click();await expect(page.locator('#st-feedback')).toContainText('Construcție validată.');
+ await touch();await page.locator('[data-st="check"]').click();await expect(page.locator('#st-feedback')).toContainText('Mărește planșa pentru precizie');await expect(page.locator('#st-feedback')).not.toContainText('Construcție validată.');
+ for(let i=0;i<12&&(await page.locator('#st-board-meta').textContent()).includes('Mărește planșa pentru precizie');i++)await page.locator('[data-st="board-plus"]').click();await expect(page.locator('#st-board-meta')).not.toContainText('Mărește planșa pentru precizie');await page.locator('[data-st="check"]').click();await expect(page.locator('#st-feedback')).toContainText('Construcție validată.');
  }finally{await context.close();}
 });
+
+for(const width of [1280,768,360])test('OX is a continuous rendered stroke without tick masks at '+width+'px',async({page})=>{
+ await page.setViewportSize({width,height:900});await page.goto('./');await page.waitForFunction(()=>!!window.GD_STUDIO);await page.locator('[data-route="lab"]:visible').first().click();await page.locator('#page > .chips [data-unit="2"]').click();
+ const result=await page.locator('#st-board svg').evaluate(async svg=>{
+  const tickBackgrounds=[...svg.querySelectorAll('.st-tick-label')].filter(t=>t.parentNode.querySelector('rect')).length,axis=svg.querySelector('.st-axes line'),y=+axis.getAttribute('y1');
+  const url=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)],{type:'image/svg+xml'})),img=new Image();img.src=url;await img.decode();const canvas=document.createElement('canvas');canvas.width=1600;canvas.height=1200;const ctx=canvas.getContext('2d');ctx.drawImage(img,0,0,1600,1200);URL.revokeObjectURL(url);const pixels=ctx.getImageData(0,0,1600,1200).data,missing=[];
+  for(let x=20;x<780;x++){let dark=false;for(let yy=Math.floor(y*2)-2;yy<=Math.ceil(y*2)+2;yy++){const i=(yy*1600+x*2)*4;dark ||= pixels[i]<160&&pixels[i+1]<180&&pixels[i+2]<195;}if(!dark)missing.push(x);}return {tickBackgrounds,missing,dash:axis.getAttribute('stroke-dasharray')};
+ });expect(result.tickBackgrounds).toBe(0);expect(result.dash).toBeNull();expect(result.missing).toEqual([]);await page.locator('#st-board svg').evaluate(e=>e.scrollIntoView({block:'center'}));await page.locator('#st-board svg').screenshot({path:'test-results/continuous-ox-'+width+'.png'});
+});
+
 async function lab(page,u){await page.goto('./');await page.waitForFunction(()=>!!window.GD_STUDIO);await page.locator('#nav-main [data-route="lab"]').click();await page.locator('#page > .chips [data-unit="'+u+'"]').click();}
 test('M1/M2: course coordinate fields, opposite rabatments and readable solution',async({page})=>{
  await lab(page,2);await page.locator('.st-coordinate').evaluate(e=>e.open=true);

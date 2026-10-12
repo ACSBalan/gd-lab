@@ -16,7 +16,7 @@ export function layoutLabels(svg,labels,fontSize,markers=[]){
   }
   if(item.kind==='tick'&&(occupied.some(b=>overlap(best,b)>0)||markers.some(q=>overlap(best,{x:q[0]-10,y:q[1]-10,w:20,h:20})>0))){g.remove();continue;}
   occupied.push(best);t.setAttribute('x',best.x+4-box.x);t.setAttribute('y',best.y+3-box.y);
-  const bg=document.createElementNS(NS,'rect');for(const [k,v] of Object.entries({x:best.x,y:best.y,width:best.w,height:best.h,rx:3,fill:'white','fill-opacity':.94}))bg.setAttribute(k,v);g.prepend(bg);
+  if(item.kind!=='tick'){const bg=document.createElementNS(NS,'rect');for(const [k,v] of Object.entries({x:best.x,y:best.y,width:best.w,height:best.h,rx:3,fill:'white','fill-opacity':.94}))bg.setAttribute(k,v);g.prepend(bg);}
   if(item.kind==='point'&&Math.hypot(best.x+w/2-x,best.y+h/2-y)>Math.max(w,h)+20){const l=document.createElementNS(NS,'line');for(const [k,v] of Object.entries({x1:x,y1:y,x2:Math.max(best.x,Math.min(best.x+w,x)),y2:Math.max(best.y,Math.min(best.y+h,y)),stroke:item.color,'stroke-width':1}))l.setAttribute(k,v);svg.insertBefore(l,g);}
  }
 }

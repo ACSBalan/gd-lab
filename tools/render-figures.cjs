@@ -29,7 +29,7 @@ function p05(){
  const polygon=(pts,c)=>`<polygon points="${pts.map(p=>[X(p[0]),Y(-p[1])].join(',')).join(' ')}" fill="none" stroke="${c}" stroke-width="2.5"/>`;
  b+=polygon(points,blue);
  points.forEach((p,i)=>{const n='abc'[i];b+=line(X(p[0]),Y(p[2]),X(p[0]),Y(-p[1]),'#a7b9c5',1)+dot(X(p[0]),Y(p[2]),n+'′',orange)+dot(X(p[0]),Y(-p[1]),n,blue,12,25);});
- for(const sense of [-1,1]){const pts=points.map(([x,y])=>[1+sense*(x-1)*Math.sqrt(2),y]);const c=sense<0?'#a44876':green;b+=polygon(pts,c);pts.forEach((p,i)=>b+=dot(X(p[0]),Y(-p[1]),'ABC'[i]+'₀',c,8,-14));}
+ for(const sense of [-1,1]){const pts=points.map(([x,y])=>[1+sense*(x-1)*Math.sqrt(2),y]);const c=sense<0?'#a44876':green;b+=polygon(pts,c);pts.forEach((p,i)=>b+=dot(X(p[0]),Y(-p[1]),'ABC'[i]+'₀',c,i===2?18:8,i===2?32:-14));}
  b+=dot(ph,380,'Pₓ',ink,10,-12);
  // The two triangles are related by a rigid half-turn about Ph; the lengths are identical.
  b+=text(305,755,'Aceeași parte de Ph · x₀=1+(x−1)√2',17,green);
@@ -57,7 +57,7 @@ function p04(){return epure('P04 · Intersecția P ∩ Q prin urmele H și V',({
  let b=seg([6,0],[0,-4],blue)+seg([6,0],[.3,3.8],orange)+seg([5,0],[.6,-4.4],'#208576')+seg([5,0],[3.1,3.8],'#a44876');
  b+=seg([3,-2],[4.5,0],ink,3)+seg([3,0],[4.5,1],ink,3)+seg([3,-2],[3,0],'#a7b9c5',1)+seg([4.5,0],[4.5,1],'#a7b9c5',1);
  b+=dot(3,-2,'hᵢ',blue,10,25)+dot(3,0,'hᵢ′',orange,10,-12)+dot(4.5,0,'vᵢ',blue,-28,28)+dot(4.5,1,'vᵢ′',orange,-32,-14);
- b+=text(760,845,'Ph',20,blue)+text(730,85,'Pv',20,orange)+text(770,895,'Qh',20,'#208576')+text(490,88,'Qv',20,'#a44876');
+ b+=text(760,845,'Ph',20,blue)+text(730,85,'Pv',20,orange)+text(770,895,'Qh',20,'#208576')+text(450,100,'Qv',20,'#a44876');
  return b+text(600,950,'P: 2x+3y+3z=12 · Q: 2x+2y+z=10 · Hᵢ=(3;2;0), Vᵢ=(4,5;0;1) m',18);
 });}
 const figures={P14:p14,P05:p05,P02:p02,P03:p03,P04:p04};

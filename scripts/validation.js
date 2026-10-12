@@ -20,15 +20,20 @@ function expected(r){
 }
 function alternatives(rule){return rule.kind==='rabat'?[expected(rule),expected({...rule,sense:1})]:[expected(rule)];}
 const fmt=n=>n.toLocaleString('ro-RO',{minimumFractionDigits:2,maximumFractionDigits:3});
+function precision(activity,unitsPerPixel=0){
+ const base=activity.board==='paper'?.5:.12,limit=activity.board==='paper'?.5:.15;
+ const pointer=Number.isFinite(unitsPerPixel)&&unitsPerPixel>0?8*unitsPerPixel:base;
+ return {base,limit,tolerance:Math.min(limit,Math.max(base,pointer)),needsZoom:pointer>limit};
+}
 function check(activity,work,options={}){
- const results=[],baseTolerance=activity.board==='paper'?.5:.12;
- // Pointer imprecision is converted to metric units by the caller; numeric entry stays exact.
- const tol=Number.isFinite(options.unitsPerPixel)&&options.unitsPerPixel>0?Math.max(baseTolerance,8*options.unitsPerPixel):baseTolerance,unit=activity.unitLabel;
+ const results=[],accuracy=precision(activity,options.unitsPerPixel),baseTolerance=accuracy.base,tol=accuracy.tolerance,unit=activity.unitLabel;
+ // Coarse pointer input requires zoom; screen size must never relax geometric accuracy.
  for(const t of activity.targets){const p=work.points[t.label],qs=alternatives(t.rule);if(!qs[0]){results.push({ok:false,label:t.label,text:'Caz fără soluție unică.'});continue;}if(!M.finitePoint(p,2)){results.push({ok:false,label:t.label,text:'Lipsește punctul '+t.label+'. '+t.hint});continue;}
-  const q=qs.reduce((best,q)=>M.dist(p,q)<M.dist(p,best)?q:best,qs[0]),dx=p[0]-q[0],dy=p[1]-q[1],error=Math.hypot(dx,dy),pointTolerance=work.exactPoints?.[t.label]?baseTolerance:tol,ok=error<=pointTolerance;
-  let text=ok?t.label+': poziție corectă. Eroare '+fmt(error)+' '+unit+'.':t.label+': deplasează '+fmt(Math.abs(dx))+' '+unit+' '+(dx>0?'spre stânga':'spre dreapta')+' și '+fmt(Math.abs(dy))+' '+unit+' '+(dy>0?'în jos':'în sus')+'. Eroare '+fmt(error)+' '+unit+'. '+t.hint;
+  const q=qs.reduce((best,q)=>M.dist(p,q)<M.dist(p,best)?q:best,qs[0]),dx=p[0]-q[0],dy=p[1]-q[1],error=Math.hypot(dx,dy),exact=work.exactPoints?.[t.label]===true,pointTolerance=exact?baseTolerance:tol,needsZoom=!exact&&accuracy.needsZoom,accurate=error<=pointTolerance,ok=accurate&&!needsZoom;
+  let text=accurate?t.label+': '+(ok?'poziție corectă. ':'verificarea prin atingere necesită mărire. ')+'Eroare '+fmt(error)+' '+unit+'.':t.label+': deplasează '+fmt(Math.abs(dx))+' '+unit+' '+(dx>0?'spre stânga':'spre dreapta')+' și '+fmt(Math.abs(dy))+' '+unit+' '+(dy>0?'în jos':'în sus')+'. Eroare '+fmt(error)+' '+unit+'. '+t.hint;
+  if(needsZoom)text+=' Mărește planșa pentru precizie sau introdu coordonatele. Toleranța maximă este '+fmt(accuracy.limit)+' '+unit+'.';
   if(ok&&t.rule.kind==='rabat')text+=M.dist(qs[0],qs[1])<1e-9?' Punct pe axa Ph: cele două sensuri coincid.':q===qs[0]?' Ai ales partea opusă urmei Ph, ca în Sârbu, Fig. 5.4.3.':' Ai ales aceeași parte a urmei Ph. Este corect; Sârbu, Fig. 5.4.3, arată sensul opus.';
-  results.push({ok,label:t.label,error,tolerance:pointTolerance,text});
+  results.push({ok,label:t.label,error,tolerance:pointTolerance,needsZoom,text});
  }
  for(const [a,b] of activity.joins){const pa=work.points[a],pb=work.points[b];if(pa&&pb&&M.dist(pa,pb)<1e-9){results.push({ok:true,label:a+b,text:'Proiecție degenerată într-un punct: '+a+'='+b+'.'});continue;}const ok=(work.lines||[]).some(l=>(l.a===a&&l.b===b)||(l.a===b&&l.b===a));results.push({ok,label:a+b,text:ok?'Dreapta '+a+'–'+b+': construită.':'Construiește dreapta prin '+a+' și '+b+' cu instrumentul Dreaptă.'});}
  if(activity.requiredArc){const r=activity.requiredArc;const arc=(work.arcs||[]).find(a=>a.center===r.center&&a.start===r.start&&a.end===r.end);const ok=!!arc&&Math.abs(arc.angle-r.angle)<.01;results.push({ok,text:ok?'Arcul sectorului: rază și unghi corecte.':'Construiește arcul cu centrul s, de la a la b, în sensul unghiului sectorului.'});}
@@ -44,4 +49,4 @@ function check(activity,work,options={}){
  }
  return {ok:results.every(r=>r.ok),results,tolerance:tol};
 }
-root.GD_VALIDATE={expected,alternatives,check};})(globalThis);
+root.GD_VALIDATE={expected,alternatives,precision,check};})(globalThis);
