@@ -1098,7 +1098,7 @@
       "unit": 2,
       "type": "capcana",
       "front": "Un punct se află pe axa OX. Unde este proiecția lui n″?",
-      "back": "În originea O. Pentru N = (x, 0, 0): n și n′ sunt pe OX, iar n″ = O, nu N.",
+      "back": "În originea O. Pentru N=(x;0;0), n=n′=N pe OX, iar n″=O. Dacă x=0, atunci N=O și toate cele trei proiecții coincid cu N.",
       "source": {
         "kind": "curs_extins",
         "pdf_page": 17
@@ -1149,7 +1149,7 @@
       "unit": 2,
       "type": "capcana",
       "front": "Este suficient |y| = |z| pentru a spune în ce bisector e un punct?",
-      "back": "Nu. |y| = |z| reunește ambele cazuri. Bisectorul se decide din semne: z = y → primul bisector; z = −y → al doilea.",
+      "back": "Nu. |y|=|z| reunește ambele bisectoare: z=y pentru primul, z=−y pentru al doilea. Dacă y=z=0, punctul se află pe OX și aparține ambelor plane bisectoare; semnele nu mai separă cazurile.",
       "source": {
         "kind": "curs_extins",
         "pdf_page": 20
@@ -1217,7 +1217,7 @@
       "unit": 2,
       "type": "capcana",
       "front": "Dacă n și n′ coincid în epură, înseamnă că proiecțiile sunt aceeași în spațiu?",
-      "back": "Nu. Sunt pe plane diferite (H și V); se suprapun doar imaginile lor după rabatere. Punctul rămâne determinat de x, y, z.",
+      "back": "În general, nu: se suprapun imaginile după rabatere, deși proiecțiile sunt pe H și V. Excepție: pentru un punct pe OX, y=z=0 și proiecțiile spațiale n și n′ coincid cu N. Punctul rămâne determinat de x, y, z.",
       "source": {
         "kind": "curs_extins",
         "pdf_page": 20
@@ -2511,7 +2511,7 @@
       "unit": 4,
       "type": "procedeu",
       "front": "Cum verifici în epură că o dreaptă aparține unui plan?",
-      "back": "Urmele ei trebuie să fie pe urmele de același nume ale planului: h pe Ph și v′ pe Pv.",
+      "back": "Dacă dreapta are două urme finite distincte H și V, verifici h pe Ph și v′ pe Pv: două puncte distincte din plan determină o dreaptă inclusă în plan. Dacă urmele coincid pe OX, lipsesc sau nu sunt unice, verifici două puncte distincte ori folosești o construcție auxiliară; simpla apartenență a unei singure urme nu este suficientă.",
       "source": {
         "kind": "curs_extins",
         "pdf_page": 45
@@ -2528,7 +2528,7 @@
       "unit": 4,
       "type": "procedeu",
       "front": "Cum construiești dreapta de intersecție a două plane P și Q, din urme?",
-      "back": "Urma ei orizontală e Ph ∩ Qh, urma verticală e Pv ∩ Qv. Le corelezi prin linii de ordine și unești proiecțiile.",
+      "back": "Construiești Hᵢ=Ph∩Qh și Vᵢ=Pv∩Qv. Dacă sunt două puncte finite distincte, le corelezi proiecțiile prin linii de ordine și unești proiecțiile de același nume. Dacă Hᵢ=Vᵢ pe OX ori o urmă lipsește sau nu este unică, obții un al doilea punct printr-un plan auxiliar ori folosești vederea W. Metoda presupune plane distincte neparalele.",
       "source": {
         "kind": "curs_extins",
         "pdf_page": 46
@@ -3517,7 +3517,7 @@
       "unit": 6,
       "type": "capcana",
       "front": "Muchia laterală a unei prisme oblice: lungimea reală e egală cu proiecția ei verticală?",
-      "back": "Nu. Pentru translația (dx, dy, dz), lungimea reală este √(dx² + dy² + dz²); înălțimea proiectată este doar |dz|.",
+      "back": "În general, proiecția pe V este mai scurtă, dar există egalitate pentru o muchie paralelă cu V. Pentru d=(dx;dy;dz): L=√(dx²+dy²+dz²), L_V=√(dx²+dz²)≤L; egalitate dacă dy=0. Înălțimea față de o bază orizontală este |dz|. Pentru d=(1;0,5;2) m: L=√5,25 m, L_V=√5 m, iar |dz|=2 m.",
       "source": {
         "kind": "curs_extins",
         "pdf_page": 70
@@ -4012,7 +4012,7 @@
       "unit": 8,
       "type": "capcana",
       "front": "Cilindru drept vertical secționat de un plan înclinat: ce vezi pe H?",
-      "back": "Cercul bazei. Este proiecția secțiunii, nu adevărata ei mărime; aceasta se obține prin rabatere.",
+      "back": "Cercul bazei, dacă planul taie complet mantaua cilindrului vertical și secțiunea nu este limitată de baze. Cercul este proiecția secțiunii, nu adevărata ei mărime, obținută prin rabatere. Pentru un cilindru finit traversat numai parțial, proiecția porțiunii de pe manta poate fi doar un arc de cerc.",
       "source": {
         "kind": "curs_extins",
         "pdf_page": 85
@@ -4472,7 +4472,7 @@
       "unit": 9,
       "type": "capcana",
       "front": "La desfășurare poți folosi lungimile proiecțiilor muchiilor?",
-      "back": "Nu. Folosești numai lungimi reale; o proiecție a unei muchii oblice e prescurtată.",
+      "back": "Folosești numai lungimi reale. O proiecție poate fi folosită direct dacă muchia este paralelă cu planul de proiecție, astfel încât apare în adevărată mărime. Dacă proiecția este prescurtată, determini mai întâi lungimea reală printr-o metodă din Unitatea 5.",
       "source": {
         "kind": "curs_extins",
         "pdf_page": 94
@@ -4543,9 +4543,9 @@
       "back": "Înălțimea la s = 0 și la s = 2πR trebuie să fie aceeași.",
       "source": {
         "kind": "curs_extins",
-        "pdf_page": 95
+        "pdf_page": 96
       },
-      "source_text": "Curs universitar extins, p. PDF 95",
+      "source_text": "Curs universitar extins, p. PDF 95–96",
       "tags": [
         "U09",
         "tip::procedeu",
@@ -4608,7 +4608,7 @@
       "unit": 9,
       "type": "procedeu",
       "front": "Cum verifici sectorul conului desfășurat?",
-      "back": "Lungimea arcului sectorului trebuie să fie egală cu circumferința bazei: G·φ = 2πR.",
+      "back": "Arcul sectorului trebuie să fie egal cu circumferința bazei: G·φ=2πR, cu φ în radiani. Dacă unghiul este exprimat în grade, verifici G·φ·π/180=2πR. De exemplu, R=1 m și G=3 m dau φ=120°=2π/3 rad.",
       "source": {
         "kind": "curs_extins",
         "pdf_page": 96
@@ -4659,7 +4659,7 @@
       "unit": 9,
       "type": "capcana",
       "front": "Poți folosi proiecția verticală a unei generatoare oblice drept lungime reală?",
-      "back": "Nu. Întâi afli lungimea reală (o metodă din Unitatea 5), apoi o reporți pe desfășurare.",
+      "back": "Da, numai dacă generatoarea este paralelă cu V și proiecția ei apare în adevărată mărime. Oblicitatea față de axa conului nu exclude acest caz frontal. Dacă generatoarea este oblică față de V, proiecția este prescurtată: afli lungimea reală printr-o metodă din Unitatea 5, apoi o reporți pe desfășurare.",
       "source": {
         "kind": "curs_extins",
         "pdf_page": 97

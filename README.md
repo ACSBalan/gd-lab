@@ -33,7 +33,7 @@ Deschide http://127.0.0.1:4173/gd-lab/. Pe Linux, instalarea browserului pentru 
 
 Fluxul din [.github/workflows/pages.yml](.github/workflows/pages.yml) verifică matematica, integritatea datelor, interfața, randarea și funcționarea offline înainte de publicare. Publică exclusiv directorul generat `dist/`.
 
-Aplicația este publicată la **[https://acsbalan.github.io/gd-lab/](https://acsbalan.github.io/gd-lab/)**. Publicarea și cele 39 de fișiere servite au fost verificate pe 12 octombrie 2026; [fluxul de validare și publicare](https://github.com/ACSBalan/gd-lab/actions/runs/38209280371) s-a încheiat cu succes.
+Adresa aplicației este **[https://acsbalan.github.io/gd-lab/](https://acsbalan.github.io/gd-lab/)**. Starea fiecărei publicări poate fi verificată în [GitHub Actions](https://github.com/ACSBalan/gd-lab/actions).
 
 Sursa Pages este deja configurată ca **GitHub Actions**. Modificările ulterioare pe `main` trec prin același flux de teste și publicare.
 
@@ -41,9 +41,13 @@ Sursa Pages este deja configurată ca **GitHub Actions**. Modificările ulterioa
 
 Progresul și construcțiile sunt salvate pe dispozitiv, fără cont. Cheia existentă `gd-lab-student-state` și toate identificatoarele cardurilor sunt păstrate. Sunt acceptate și exporturile GD Carduri. Din Setări se exportă/importă copia JSON, inclusiv construcții și rezultate.
 
-Pentru mutarea de la fișierul HTML la adresa web: exportă progresul în aplicația veche și importă-l pe noua adresă. Browserul nu permite transfer automat între origini diferite.
+Varianta web este recomandată atât pe laptop/desktop, cât și pe iPhone și Android. Primește actualizările și permite lucrul offline după prima încărcare completă, când apare „Offline pregătit”. Dacă apare „Versiune nouă disponibilă”, apasă „Reîncarcă aplicația”; progresul se păstrează.
 
-Pe iPhone: deschide adresa în Safari → Partajare → Adaugă la ecranul principal. Așteaptă „Offline pregătit” după prima încărcare. Instalarea și pornirea offline pe un iPhone fizic trebuie confirmate pe dispozitiv. Randarea 3D necesită WebGL; restul aplicației oferă acces la planșă și materialele de studiu dacă acesta nu este disponibil.
+Fișierul GD_Lab.html este copia portabilă a aceleiași aplicații, cu datele, imaginile și modulele 3D încorporate. Se deschide direct într-un browser modern, fără server și fără conexiune, și este mai comod de folosit pe laptop. Nu primește automat actualizări: pentru acestea trebuie descărcat fișierul nou.
+
+Progresul este separat între site și fișierul local, între browsere și între dispozitive. Pentru transfer, folosește Setări → Exportă progresul în varianta în care ai lucrat, apoi Setări → Importă progresul în cealaltă. Nu există sincronizare automată.
+
+Pe iPhone: deschide adresa în Safari → Partajare → Adaugă la ecranul principal. Pe Android: deschide adresa în Chrome și folosește opțiunea de instalare sau adăugare la ecranul principal din meniul browserului. Așteaptă „Offline pregătit” după prima încărcare. Utilizatorul a confirmat anterior funcționarea pe iPhone și Android; această livrare nu include o nouă verificare pe telefoane fizice. Randarea 3D necesită WebGL; restul aplicației oferă acces la planșă și materialele de studiu dacă acesta nu este disponibil.
 
 ## Documentație și proveniență
 
@@ -52,6 +56,11 @@ Pe iPhone: deschide adresa în Safari → Partajare → Adaugă la ecranul princ
 - [Arhitectură, formule și persistență](docs/architecture.md)
 - [Acoperirea celor zece unități](docs/curriculum.md)
 
-Baza este arhiva PWA furnizată. Resursele neafectate și datele corectate intenționat au verificări SHA-256; identificatoarele sunt comparate separat cu versiunea inițială, iar calculele laboratoarelor de referință au teste de regresie numerică. Registrul auditului precizează modificările. Fișierul HTML autonom încărcat inițial rămâne în repository ca referință; nu este inclus în aplicația publicată. Fișierul CONTROL_CALITATE.txt este documentul de control primit cu arhiva, nu raportul acestei implementări. Nu sunt publicate PDF-urile sursă.
+Baza este arhiva PWA furnizată. Resursele neafectate și datele corectate intenționat au verificări SHA-256; identificatoarele sunt comparate separat cu versiunea inițială, iar calculele laboratoarelor de referință au teste de regresie numerică. Registrul auditului precizează modificările. GD_Lab.html este generat din aceleași date și module ca aplicația integrată. Include cele 23 de activități, Three.js și toate imaginile; rulează local fără cereri de rețea. Se regenerează cu npm run standalone. Pentru instalarea PWA se folosește build-ul din dist, publicat prin HTTPS. Fișierul CONTROL_CALITATE.txt este documentul de control primit cu arhiva, nu raportul acestei implementări. Nu sunt publicate PDF-urile sursă.
 
 Convențiile urmează N. D. Sârbu (2017), suportul academic extins și caietul de seminar furnizat. Three.js este distribuit local, cu licența MIT în vendor/LICENSE. Aplicația nu folosește un CDN la rulare.
+
+
+## Materiale armonizate
+
+Aplicația web și GD_Lab.html conțin aceleași corecturi ale auditului academic final. Cele 345 de ID-uri sunt păstrate. Cursul are 122 de pagini, iar caietul 67, deci paginația documentelor finale nu a fost decalată. [Registrul corecturilor și verificărilor](docs/materiale-armonizate.md) descrie această actualizare. PDF-urile sunt materiale separate; aplicația folosește datele incluse în repository și nu le citește la rulare.

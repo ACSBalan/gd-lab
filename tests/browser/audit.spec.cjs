@@ -1,7 +1,7 @@
 const {test,expect}=require('@playwright/test');
-for(const width of [1280,360])test('M6: touch rabatment with rho=2 is rejected at '+width+'px, then zoom or numeric entry enables precision',async({browser})=>{
+for(const width of [1280,360])test('M6: touch rabatment with rho=2 is rejected at '+width+'px, then zoom or numeric entry enables precision',async({browser},testInfo)=>{
  const context=await browser.newContext({viewport:{width,height:900},hasTouch:true});
- try{const page=await context.newPage();await page.goto('http://127.0.0.1:4173/gd-lab/');await page.waitForFunction(()=>!!window.GD_STUDIO);await page.locator('[data-route="lab"]:visible').first().click();await page.locator('#page > .chips [data-unit="5"]').click();await page.locator('.st-coordinate').evaluate(e=>e.open=true);
+ try{const page=await context.newPage();await page.goto(testInfo.project.use.baseURL);await page.waitForFunction(()=>!!window.GD_STUDIO);await page.locator('[data-route="lab"]:visible').first().click();await page.locator('#page > .chips [data-unit="5"]').click();await page.locator('.st-coordinate').evaluate(e=>e.open=true);
  const place=async(label,x,y)=>{await page.locator('#st-label').selectOption(label);await page.locator('#st-u').fill(String(x));await page.locator('#st-v').fill(String(y));await page.locator('[data-st="place"]').click();};
  const touch=async()=>{await page.locator('#st-board svg').evaluate(e=>e.scrollIntoView({block:'center'}));const c=await page.locator('#st-board circle[data-point="n₀"]').boundingBox();await page.touchscreen.tap(c.x+c.width/2,c.y+c.height/2);};
  for(const [label,x,y] of [['n',3,2],['n′',3,1],['Pₓ',1,0],['n₀',-1,2]])await place(label,x,y);
