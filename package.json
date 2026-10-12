@@ -1,0 +1,13 @@
+{
+  "name": "gd-lab",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node --test tests/*.test.cjs",
+    "test:browser": "playwright test",
+    "start": "node tools/server.cjs",
+    "build": "node tools/build.cjs"
+  },
+  "dependencies": {"three": "0.180.0"},
+  "devDependencies": {"@playwright/test": "1.56.1"}
+}

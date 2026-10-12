@@ -1,0 +1,804 @@
+{
+  "exercises": [
+    {
+      "id": "1.1",
+      "unit": 1,
+      "title": "Proiecție centrală și paralelă",
+      "data": "În secțiunea (u,z), planul P este z=0. A=(2;3), B=(4;3), S=(0;6); direcția paralelă Δ=(1;−2).",
+      "tasks": [
+        "1. În două desene, trasează P, A, B și segmentul AB.",
+        "2. Pentru proiecția centrală, construiește SA și SB până la P. Notează imaginile a și b.",
+        "3. Pentru proiecția paralelă, construiește proiectantele prin A și B în direcția Δ. Măsoară ab în ambele cazuri."
+      ],
+      "check": "ab central = ____ ; ab paralel = ____ ; AB = ____.",
+      "solution": {
+        "title": "Proiecție centrală și paralelă",
+        "steps": [
+          "Central: a=(4;0), b=(8;0), deci ab=4, pe când AB=2.",
+          "Paralel cu Δ=(1;−2): a=(3,5;0), b=(5,5;0), deci ab=2.",
+          "Grafic: cele două familii de proiectante au orientări diferite; verificare în planșa P01."
+        ],
+        "plan": "P01"
+      }
+    },
+    {
+      "id": "1.2",
+      "unit": 1,
+      "title": "Trei proiecții ale punctului",
+      "data": "A=(3;2;4), B=(2;−3;1), C=(1;2;−2).",
+      "tasks": [
+        "1. Calculează pentru fiecare punct proiecțiile pe H, V și W.",
+        "2. Identifică semiplanele HA/HP și VS/VI, respectiv cadranul WI–WIV.",
+        "3. Construiește în axonometrie triedrul H–V–W și punctul A cu proiectantele sale."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Trei proiecții ale punctului",
+        "steps": [
+          "A: a=(3;2;0), a′=(3;0;4), a″=(0;2;4): HA, VS, WI.",
+          "B: b=(2;−3;0), b′=(2;0;1), b″=(0;−3;1): HP, VS, WII.",
+          "C: c=(1;2;0), c′=(1;0;−2), c″=(0;2;−2): HA, VI, WIV."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "1.3",
+      "unit": 1,
+      "title": "Lungime reală și proiecții",
+      "data": "A=(1;1;1), B=(4;5;3). Repetă pentru C=(1;1;3), D=(4;5;3).",
+      "tasks": [
+        "1. Calculează Δx, Δy, Δz și lungimea AB.",
+        "2. Calculează lungimile pe H, V și W; marchează-le într-o schiță cu proiecții.",
+        "3. Compară cu CD și explică ce proiecție redă lungimea reală."
+      ],
+      "check": "AB ____ ; ab ____ ; a′b′ ____ ; a″b″ ____ ; CD ____.",
+      "solution": {
+        "title": "Lungime reală și proiecții",
+        "steps": [
+          "Pentru AB: (Δx,Δy,Δz)=(3;4;2), |AB|=√29≈5,385.",
+          "Pe H: 5; pe V: √13≈3,606; pe W: √20≈4,472. Niciuna nu este 5,385.",
+          "Pentru CD: (3;4;0), |CD|=|cd|=5; pe H rezultă adevărata mărime."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "2.1",
+      "unit": 2,
+      "title": "Epura punctelor din patru diedre",
+      "data": "A=(4;2;3), B=(3;−2;1), C=(2;−1;−3), D=(1;3;−2).",
+      "tasks": [
+        "1. Trasează o singură axă OX; alege originea O astfel încât abscisele pozitive să încapă spre stânga.",
+        "2. Construiește a/a′, b/b′, c/c′, d/d′ cu liniile de ordine.",
+        "3. Notează diedrul și verifică semnele y și z pentru fiecare punct."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Epura punctelor din patru diedre",
+        "steps": [
+          "A: I — a sub OX la 2; a′ sus la 3; abscisa +4.",
+          "B: II — b sus la 2; b′ sus la 1; abscisa +3.",
+          "C: III — c sus la 1; c′ jos la 3; abscisa +2.",
+          "D: IV — d jos la 3; d′ jos la 2; abscisa +1. Planșa P02."
+        ],
+        "plan": "P02"
+      }
+    },
+    {
+      "id": "2.2",
+      "unit": 2,
+      "title": "Transferul proiecției laterale",
+      "data": "Folosind A=(4;2;3) și B=(3;−2;1) din problema 2.1. Coordonatele sunt în metri; pentru desenul de mână folosește scara 1 m în spațiu = 1 cm pe hârtie (1:100).",
+      "tasks": [
+        "1. Construiește pe epura existentă axa OZ și poziția rabătută a planului W.",
+        "2. Transferă |y| din planul H spre W cu arc având centrul în O.",
+        "3. Plasează a″ și b″ și trasează proiectantele orizontale din a′ și b′."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Transferul proiecției laterale",
+        "steps": [
+          "a″=(0;2;3) m: la 2 cm la dreapta lui OZ și la 3 cm deasupra OX, la scara 1:100.",
+          "b″=(0;−2;1) m: la 2 cm la stânga lui OZ și la 1 cm deasupra OX, la scara 1:100.",
+          "Distanțele față de OZ sunt 2 pentru ambele; a′/a″ și b′/b″ au aceeași cotă."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "2.3",
+      "unit": 2,
+      "title": "Punctele în plane bisectoare",
+      "data": "E=(5;2;2), F=(3;−2,5;2,5), G=(2;1,5;−1,5).",
+      "tasks": [
+        "1. Construiește perechile de proiecții pe epură.",
+        "2. Stabilește bisectorul (B1 sau B2) și diedrul pentru fiecare.",
+        "3. Marchează perechile simetrice și cele suprapuse."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Punctele în plane bisectoare",
+        "steps": [
+          "E: z=y=2 — B1, diedrul I; e/e′ simetrice față de OX.",
+          "F: z=−y=2,5 — B2, diedrul II; f=f′ deasupra OX.",
+          "G: z=−y=−1,5 — B2, diedrul IV; g=g′ sub OX."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "2.4",
+      "unit": 2,
+      "title": "Simetria punctului",
+      "data": "P=(3;1;2).",
+      "tasks": [
+        "1. Construiește epura punctului P și apoi reflectă-l față de H, V și OX.",
+        "2. Calculează separat coordonatele simetricelor față de B1 și B2; desenează proiecțiile.",
+        "3. Testează fiecare transformare aplicând-o de două ori."
+      ],
+      "check": "După două reflexii identice, coordonatele revin la P? ___",
+      "solution": {
+        "title": "Simetria punctului",
+        "steps": [
+          "Față de H: (3;1;−2), diedrul IV; față de V: (3;−1;2), diedrul II.",
+          "Față de OX: (3;−1;−2), diedrul III; față de B1: (3;2;1), diedrul I.",
+          "Față de B2: (3;−2;−1), diedrul III; fiecare reflexie este involutivă."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "3.1",
+      "unit": 3,
+      "title": "Urmele unei drepte",
+      "data": "A=(3;1;1), B=(5;3;−1).",
+      "tasks": [
+        "1. Construiește a, a′, b, b′ și proiecțiile d=ab, d′=a′b′; prelungește d și d′.",
+        "2. Obține grafic urmele h/h′ și v/v′ prin intersecții cu OX și linii de ordine.",
+        "3. Calculează urma W și precizează în ce diedre se găsesc intervalele dreptei."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Urmele unei drepte",
+        "steps": [
+          "D(t)=(3+2t;1+2t;1−2t). H la t=0,5: (4;2;0); V la t=−0,5: (2;0;2).",
+          "W la t=−1,5: (0;−2;4). În epură: h la x=4 sub OX la 2; v′ la x=2 sus la 2; w″ stânga OZ la 2, sus la 4.",
+          "Diedre la t crescător: II → I → IV, frontierele fiind V și H. |AB|=√12≈3,464. Planșa P03."
+        ],
+        "plan": "P03"
+      }
+    },
+    {
+      "id": "3.2",
+      "unit": 3,
+      "title": "Cinci poziții particulare ale dreptei",
+      "data": "a) C=(2;1;2), D=(5;3;2); b) E=(2;3;1), F=(2;3;4); c) G=(1;1;3), K=(4;1;3); d) L=(3;1;1), N=(5;1;3); e) P=(2;1;3), R=(2;4;3).",
+      "tasks": [
+        "1. Pentru a–e, identifică tipul dreptei și schițează proiecțiile de același nume.",
+        "2. Calculează pe ce plan se vede lungimea reală a segmentului.",
+        "3. Construiește urma cerută: a) V; b) H; c) W; d) H; e) V."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Cinci poziții particulare ale dreptei",
+        "steps": [
+          "a) Orizontală: |CD|=√13 pe H; V=(0,5;0;2).",
+          "b) Verticală: EF=3 pe V și W; H=(2;3;0), proiecție H punctuală.",
+          "c) Fronto-orizontală: GK=3 pe H și V; W=(0;1;3).",
+          "d) Frontală: |LN|=√8 pe V; H=(2;1;0).",
+          "e) Dreaptă de capăt: |PR|=3 pe H și W; V=(2;0;3), proiecția pe V este un punct."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "3.3",
+      "unit": 3,
+      "title": "Două drepte: paralelism și concurență",
+      "data": "a) D₁: (1;1;1), (3;2;3); D₂: (2;3;1), (4;4;3). b) D₁: (2;1;1), (4;3;3); D₂: (1;3;1), (5;1;3). c) D₁: (1;1;1), (3;2;3); D₃: (2;0;3), (4;3;1).",
+      "tasks": [
+        "1. Construiește pe H și V cele trei perechi, în desene separate.",
+        "2. Identifică relația spațială și susține-o prin vectori sau un punct comun.",
+        "3. La cazul c), compară abscisele intersecțiilor proiectate."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Două drepte: paralelism și concurență",
+        "steps": [
+          "a) Paralele distincte: ambii directori (2;1;2), dar punctul (2;3;1) nu aparține primei drepte.",
+          "b) Concurente: K=(3;2;2), comun ambelor drepte; k și k′ la abscisa +3.",
+          "c) Necoplanare: pe H intersecție la x=3,5, pe V la x=2,5; directori (2;1;2) și (2;3;−2) necoliniari."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "3.4",
+      "unit": 3,
+      "title": "Capcana dreptei de profil",
+      "data": "D₁(t)=(3;t;1+t), D₂(s)=(s;1;3).",
+      "tasks": [
+        "1. Construiește ambele proiecții pe H și V.",
+        "2. Determină intersecțiile aparente și compară liniile de ordine.",
+        "3. Verifică pe W și rezolvă ecuațiile pentru un punct comun."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Capcana dreptei de profil",
+        "steps": [
+          "Pe H: (x,y)=(3;1); pe V: (x,z)=(3;3). Abscisele aparente coincid.",
+          "În spațiu x cere s=3 și y cere t=1, dar z(D₁)=2 ≠ z(D₂)=3.",
+          "Pe W: d₁″ este z=y+1; proiecția lui D₂ este punctul (1;3), exterior lui d₁″. Dreptele nu sunt concurente."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "4.1",
+      "unit": 4,
+      "title": "Urmele planului P",
+      "data": "Pentru problemele 4.1–4.4: P: 2x+3y+3z=12.",
+      "tasks": [
+        "1. Calculează Px, Py, Pz.",
+        "2. Construiește în epură Ph și Pv și apoi urma Pw pe W, transferând Py.",
+        "3. Verifică intersecția urmelor pe OX."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Urmele planului P",
+        "steps": [
+          "Px=(6;0;0), Py=(0;4;0), Pz=(0;0;4).",
+          "Ph: 2x+3y=12, z=0; Pv: 2x+3z=12, y=0; Pw: y+z=4, x=0.",
+          "Ph și Pv întâlnesc OX la x=6; Pw unește Py și Pz în W."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "4.2",
+      "unit": 4,
+      "title": "Puncte de pe o orizontală a planului",
+      "data": "P: 2x+3y+3z=12. M=(3;1;1), N=(3;2;1).",
+      "tasks": [
+        "1. Pe Pv identifică punctul de cotă z=1 și construiește proiecția H a orizontalei de cotă 1.",
+        "2. Verifică grafic dacă m și n aparțin acestei orizontale.",
+        "3. Controlează prin substituție în ecuația planului."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Puncte de pe o orizontală a planului",
+        "steps": [
+          "La z=1: 2x+3y=9; pe V punctul de referință este x=4,5.",
+          "M: 6+3+3=12, deci aparține; N: 6+6+3=15, deci nu aparține.",
+          "În H, la abscisa x=3, orizontala are y=1, nu y=2."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "4.3",
+      "unit": 4,
+      "title": "Intersecția a două plane",
+      "data": "P: 2x+3y+3z=12 și Q: 2x+2y+z=10.",
+      "tasks": [
+        "1. Construiește urmele Ph, Pv, Qh, Qv în aceeași epură.",
+        "2. Găsește urma Hᵢ ca intersecție Ph∩Qh și urma Vᵢ ca intersecție Pv∩Qv.",
+        "3. Construiește i și i′ și verifică două puncte pe ambele plane."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Intersecția a două plane",
+        "steps": [
+          "Qh: x+y=5; Qv: 2x+z=10.",
+          "Hᵢ=(3;2;0); Vᵢ=(4,5;0;1). i unește hᵢ cu vᵢ, iar i′ unește hᵢ′ cu vᵢ′.",
+          "Control: în P, Hᵢ dă 6+6=12 și Vᵢ dă 9+3=12; în Q, 6+4=10 și 9+1=10. Planșa P04."
+        ],
+        "plan": "P04"
+      }
+    },
+    {
+      "id": "4.4",
+      "unit": 4,
+      "title": "Intersecție dreaptă–plan prin auxiliar frontal",
+      "data": "P: 2x+3y+3z=12. Dreapta D trece prin A=(1;1;2), B=(3;1;4).",
+      "tasks": [
+        "1. Construiește proiecțiile d, d′ și notează depărtarea constantă.",
+        "2. Alege planul auxiliar y=1; construiește intersecția acestuia cu P.",
+        "3. Obține K ca intersecție dreaptă–plan; verifică în cele două ecuații."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Intersecție dreaptă–plan prin auxiliar frontal",
+        "steps": [
+          "În auxiliarul y=1: 2x+3z=9; dreapta D are z=x+1, y=1.",
+          "Rezultă x=1,2, z=2,2, deci K=(1,2;1;2,2).",
+          "Control: în P, 2,4+3+6,6=12; pe D, parametrul este t=0,1 dacă D=A+t(B−A)."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "5.1",
+      "unit": 5,
+      "title": "Schimbarea planului vertical",
+      "data": "A=(1;1;1), B=(4;5;3).",
+      "tasks": [
+        "1. Construiește epura inițială și segmentul orizontal ab.",
+        "2. Trasează O₁X₁ paralel cu ab și du din a, b proiectante perpendiculare.",
+        "3. Reportează cotele pe noua vedere și măsoară lungimea reală și înclinarea față de H."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Schimbarea planului vertical",
+        "steps": [
+          "Pe H: |ab|=√(3²+4²)=5; Δz=2.",
+          "Pe noul V₁, |a₁′b₁′|=√(5²+2²)=√29≈5,385.",
+          "Înclinarea segmentului față de H este arctan(2/5)≈21,80°."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "5.2",
+      "unit": 5,
+      "title": "Rotația de nivel a segmentului AB",
+      "data": "A=(1;1;1), B=(4;5;3); axa verticală de rotație trece prin A.",
+      "tasks": [
+        "1. Rotește proiecția b în jurul lui a, pe un arc cu raza |ab|, până când ab₁ este paralel cu OX.",
+        "2. Alege b₁ spre stânga lui a; transferă cota inițială a lui B pentru b₁′.",
+        "3. Măsoară a′b₁′ și compară cu problema 5.1."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Rotația de nivel a segmentului AB",
+        "steps": [
+          "ab=5; b₁=(6;1) în H, la abscisa +6 și depărtarea +1.",
+          "B₁=(6;1;3), deoarece rotația de nivel păstrează z.",
+          "|a′b₁′|=√29≈5,385, ca la schimbarea planului V."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "5.3",
+      "unit": 5,
+      "title": "Rotația de front a segmentului CD",
+      "data": "C=(1;1;1), D=(3;3;4); axa de capăt de rotație trece prin C.",
+      "tasks": [
+        "1. În V, rotește d′ în jurul lui c′ pe cercul de rază |c′d′| până când c′d₁′ devine paralel cu OX.",
+        "2. Alege d₁′ spre stânga lui c′; pe H păstrează depărtarea inițială a lui D.",
+        "3. Măsoară |cd₁| și verifică prin calcul lungimea reală CD."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Rotația de front a segmentului CD",
+        "steps": [
+          "|c′d′|=√((3−1)²+(4−1)²)=√13≈3,606.",
+          "După rotație: d₁′ are x=1+√13≈4,606 și z=1; d₁ pe H are y=3.",
+          "|cd₁|=√(13+4)=√17≈4,123=|CD|."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "5.4",
+      "unit": 5,
+      "title": "Rabaterea unui triunghi dintr-un plan de capăt",
+      "data": "P: z=x−1; A=(2;1;1), B=(4;1;3), C=(3;3;2).",
+      "tasks": [
+        "1. Trasează Ph, Pv și proiecțiile a/a′, b/b′, c/c′.",
+        "2. Rabatere în jurul urmei Ph: pentru fiecare punct reportează cu compasul raza |Px p′| pe paralela la OX prin p.",
+        "3. Construiește A₀B₀C₀ în H și măsoară cele trei lungimi reale."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Rabaterea unui triunghi dintr-un plan de capăt",
+        "steps": [
+          "Ph: x=1; Pv: z=x−1. Abscisa rabătută este x₀=1+√2·(x−1).",
+          "A₀=(1+√2;1), B₀=(1+3√2;1), C₀=(1+2√2;3).",
+          "AB=√8≈2,828; AC=BC=√6≈2,449. Triunghi isoscel. Planșa P05."
+        ],
+        "plan": "P05"
+      }
+    },
+    {
+      "id": "6.1",
+      "unit": 6,
+      "title": "Prismă dreaptă triunghiulară",
+      "data": "Baza ABC în H: A=(1;1;0), B=(4;1;0), C=(2;3;0). Muchiile laterale sunt verticale și au lungimea 3.",
+      "tasks": [
+        "1. Calculează coordonatele lui A₁, B₁, C₁.",
+        "2. Construiește epura H–V cu bazele și muchiile laterale.",
+        "3. În V, stabilește liniile vizibile privind dinspre +OY și marchează eventualele suprapuneri."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Prismă dreaptă triunghiulară",
+        "steps": [
+          "A₁=(1;1;3), B₁=(4;1;3), C₁=(2;3;3). Pe H, muchiile laterale degenerează în puncte.",
+          "În V, c′c₁′ este vizibilă (y=3, în fața bazei cu y=1); conturul orizontal la z=0 și z=3 este vizibil.",
+          "Muchia bazei și cea de sus au proiectări suprapuse cu segmente ale conturului; separă corect geometria de simbolul liniilor."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "6.2",
+      "unit": 6,
+      "title": "Prismă oblică — model complet și vizibilitate",
+      "data": "Baza ABC în H: A=(1;1;0), B=(3;1;0), C=(2;3;0). Vectorul complet de translație către baza superioară este v=(2;1;3).",
+      "tasks": [
+        "1. Calculează A₁=A+v, B₁=B+v, C₁=C+v; construiește ambele proiecții.",
+        "2. Determină conturul aparent pe H și pe V.",
+        "3. Privind pe H dinspre +OZ și pe V dinspre +OY, desenează întrerupt muchiile acoperite."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Prismă oblică — model complet și vizibilitate",
+        "steps": [
+          "A₁=(3;2;3), B₁=(5;2;3), C₁=(4;4;3).",
+          "Pe H, conturul aparent este a–b–b₁–c₁–c–a; muchia BC este acoperită; celelalte muchii proiectate sunt vizibile în această configurație.",
+          "Pe V, conturul aparent este a′–b′–b₁′–a₁′; c′c₁′ este vizibilă; nu există alte muchii acoperite distincte. Planșa P06."
+        ],
+        "plan": "P06"
+      }
+    },
+    {
+      "id": "6.3",
+      "unit": 6,
+      "title": "Piramidă patrulateră și vizibilitate",
+      "data": "Baza ABCD în H: A=(1;1;0), B=(4;1;0), C=(4;4;0), D=(1;4;0). Vârful S=(2;2;4).",
+      "tasks": [
+        "1. Construiește epura bazei și proiecția vârfului S.",
+        "2. Unește S cu A,B,C,D și stabilește vizibilitatea în H și V.",
+        "3. Calculează lungimile reale SA, SB, SC, SD (vor fi folosite la 9.2)."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Piramidă patrulateră și vizibilitate",
+        "steps": [
+          "|SA|=√18≈4,243; |SB|=√21≈4,583; |SC|=√24≈4,899; |SD|=√21≈4,583.",
+          "Pe H sunt vizibile muchiile laterale; s este în interiorul bazei.",
+          "În V, proiecția SA se suprapune peste SD, iar SB peste SC; fețele dinspre +OY acoperă fețele din spate, fără a genera linii ascunse distincte în epură. Planșa P07."
+        ],
+        "plan": "P07"
+      }
+    },
+    {
+      "id": "6.4",
+      "unit": 6,
+      "title": "Verificarea relației lui Euler",
+      "data": "Prismă triunghiulară; piramidă patrulateră; octaedru regulat.",
+      "tasks": [
+        "1. Desenează schematic fiecare poliedru și numără vârfurile V, muchiile E și fețele F.",
+        "2. Completează trei verificări V−E+F.",
+        "3. Verifică numărul de muchii numărând fiecare muchie o singură dată."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Verificarea relației lui Euler",
+        "steps": [
+          "Prismă triunghiulară: 6−9+5=2.",
+          "Piramidă patrulateră: 5−8+5=2.",
+          "Octaedru: 6−12+8=2."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "7.1",
+      "unit": 7,
+      "title": "Cilindru vertical: puncte de pe manta",
+      "data": "Axa: x=3, y=2. R=1,5, baza z=0, înălțime 4. N: n=(3;3,5), z=2,5. Q: q=(3;0,5), z=1.",
+      "tasks": [
+        "1. Construiește conturul cilindrului pe H și V.",
+        "2. Marchează n și q pe cercul din H; construiește n′ și q′ folosind cotele date.",
+        "3. Privind dinspre +OY, stabilește care punct este vizibil și care este acoperit."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Cilindru vertical: puncte de pe manta",
+        "steps": [
+          "Pe H, cercul are centrul (3;2) și raza 1,5; pe V conturul are x de la 1,5 la 4,5, z de la 0 la 4.",
+          "N=(3;3,5;2,5), pe generatoarea frontală: vizibil în V.",
+          "Q=(3;0,5;1), pe generatoarea posterioară: acoperit în V; din n sau q singur nu poți afla z."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "7.2",
+      "unit": 7,
+      "title": "Con drept: proiecția unui punct prin generatoare",
+      "data": "Baza în H: centru (3;2), R=2; vârful S=(3;2;4). K pe manta are k=(4;2); L are l=(3;3).",
+      "tasks": [
+        "1. Construiește cercul de bază în H și conturul triunghiular în V.",
+        "2. Pentru K, găsește piciorul generatoarei pe cerc și construiește k′.",
+        "3. Pentru L, construiește cercul de nivel corespunzător și determină l′."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Con drept: proiecția unui punct prin generatoare",
+        "steps": [
+          "K: distanța față de axa conului este 1; piciorul generatoarei pe bază E=(5;2;0); z(K)=2.",
+          "L: la aceeași distanță radială 1, cercul de nivel este la cota 2; L=(3;3;2).",
+          "În V, k′ la abscisa 4 și z=2; l′ la abscisa 3 și z=2; ambele sunt vizibile dinspre +OY. Planșa P08."
+        ],
+        "plan": "P08"
+      }
+    },
+    {
+      "id": "7.3",
+      "unit": 7,
+      "title": "Sferă: secțiune de nivel și cote posibile",
+      "data": "G=(4;3;3), R=2,5; planul z=4,5. Un punct are proiecția H p=(5;3).",
+      "tasks": [
+        "1. Construiește cele două contururi ale sferei.",
+        "2. Calculează raza cercului de nivel și desenează proiecțiile acestuia.",
+        "3. Determină cele două cote ale punctului cu proiecția p; marchează punctul vizibil din +OZ."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Sferă: secțiune de nivel și cote posibile",
+        "steps": [
+          "Diferența față de centru este 1,5; raza cercului de nivel este √(2,5²−1,5²)=2.",
+          "Pe H cerc de rază 2; pe V segment orizontal de lungime 4 la cota 4,5.",
+          "Pentru p=(5;3), z=3±√5,25, deci aproximativ 5,291 ori 0,709; vizibil din +OZ este cel de sus. Planșa P09."
+        ],
+        "plan": "P09"
+      }
+    },
+    {
+      "id": "8.1",
+      "unit": 8,
+      "title": "Secțiunea unei prisme prin plan de capăt",
+      "data": "Prisma dreaptă din 6.1: A=(1;1;0), B=(4;1;0), C=(2;3;0), înălțime 3. Plan secant P: z=0,5x+0,5.",
+      "tasks": [
+        "1. Construiește pe V urma Pv și intersecteaz-o cu cele trei muchii laterale proiectate.",
+        "2. Coboară liniile de ordine pentru proiecțiile H ale punctelor A*, B*, C*.",
+        "3. Rabate planul P pe H și măsoară laturile reale ale secțiunii."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Secțiunea unei prisme prin plan de capăt",
+        "steps": [
+          "Urma Ph: x=−1; Pv: z=0,5x+0,5.",
+          "A*=(1;1;1), B*=(4;1;2,5), C*=(2;3;1,5).",
+          "La rabatere x₀=−1+(x+1)√1,25: A₀≈(1,236;1); B₀≈(4,590;1); C₀≈(2,354;3).",
+          "Laturi reale: A*B*=√11,25≈3,354; A*C*=√5,25≈2,291; B*C*=3."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "8.2",
+      "unit": 8,
+      "title": "Secțiunea cilindrului: opt generatoare",
+      "data": "Cilindru drept circular: axa prin (3;2), R=1, 0≤z≤4. Plan P: z=x−0,5.",
+      "tasks": [
+        "1. Construiește cercul H și urma Pv; împarte cercul în opt părți egale începând la x maxim.",
+        "2. Pentru fiecare generatoare la 0°,45°,...,315°, construiește punctul de secțiune.",
+        "3. Unește punctele în H prin cercul proiectat și identifică proiecția V; reprezintă adevărata formă prin rabatere."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Secțiunea cilindrului: opt generatoare",
+        "steps": [
+          "Parametric: X(θ)=(3+cosθ;2+sinθ;2,5+cosθ), pentru θ∈[0,2π].",
+          "Pe V: segmentul z=x−0,5, 2≤x≤4, 1,5≤z≤3,5; pe H: cercul de rază 1.",
+          "În planul secant: elipsă cu semiaxele √2 și 1; perimetru aproximativ 7,640. La 0°,45°,...: z=3,50;3,21;2,50;1,79;1,50;1,79;2,50;3,21. Planșa P10."
+        ],
+        "plan": "P10"
+      }
+    },
+    {
+      "id": "8.3",
+      "unit": 8,
+      "title": "Secțiuni conice: decizia prin poziția planului",
+      "data": "Conul drept circular dublu ideal are R=2 și înălțimea unei pânze h=4. Consideră numai secțiuni nedegenerate cu plane care nu trec prin vârf.",
+      "tasks": [
+        "1. Calculează semiunghiul θ al generatoarei cu axa.",
+        "2. Clasifică secțiunea pentru un plan cu axa la unghiul α: a) 90°; b) 45°; c) α=θ; d) 0°.",
+        "3. Pentru conul finit cu baza z=0, h=4, determină raza secțiunii orizontale la cota z=1."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Secțiuni conice: decizia prin poziția planului",
+        "steps": [
+          "θ=arctan(2/4)≈26,565°.",
+          "a) cerc; b) elipsă (45°>θ); c) parabolă; d) hiperbolă pentru planul ales să intersecteze ambele pânze ale conului dublu.",
+          "Pe conul finit, secțiunile pot apărea numai ca porțiuni ale acestor curbe dacă ating mantaua. La z=1, r=2(1−1/4)=1,5."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "8.4",
+      "unit": 8,
+      "title": "Două suprafețe: pătrundere, contact, smulgere",
+      "data": "Cilindrul vertical infinit: x²+y²=4. Cilindrul orizontal infinit: (y−d)²+z²=1, axă paralelă cu OX prin (0;d;0). Cazuri d=0; 1; 1,5.",
+      "tasks": [
+        "1. Schițează poziția celor două axe și secțiunile lor circulare.",
+        "2. Pentru fiecare d verifică dacă intersecția constă din două componente, contact intermediar sau o singură componentă.",
+        "3. Marchează punctele unde x=0 (dacă există), la care ramurile se reunesc."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Două suprafețe: pătrundere, contact, smulgere",
+        "steps": [
+          "d=0: y∈[−1;1], x=±√(4−y²) niciodată 0 ⇒ două curbe disjuncte (pătrundere).",
+          "d=1: y≤2 și x=0 doar în punctul (0;2;0), unde suprafețele admit planul tangent comun y=2, iar curba prezintă un punct dublu, cu tangente distincte x=±√2·z (caz intermediar).",
+          "d=1,5: |y|≤2 limitează curba cilindrului mic; ramurile x± se reunesc la (0;2;±√0,75) ⇒ o componentă (smulgere). Planșa P11."
+        ],
+        "plan": "P11"
+      }
+    },
+    {
+      "id": "9.1",
+      "unit": 9,
+      "title": "Desfășurarea unei prisme trunchiate",
+      "data": "Prisma dreaptă ABC–A₁B₁C₁ din 6.1, secționată ca în 8.1. Baza A=(1;1), B=(4;1), C=(2;3). Cotele tăierii sunt la A=1, B=2,5, C=1,5. Datele spațiale și lungimile rezultate sunt în metri (m); ariile în m².",
+      "tasks": [
+        "1. Alege drept tăietură muchia AA₁ și trasează orizontal succesiunea AB, BC, CA, în lungimi reale.",
+        "2. În pozițiile A–B–C–A ridică generatoare de înălțimi 1;2,5;1,5;1.",
+        "3. Unește vârfurile suprafeței superioare; calculează lungimile și aria desfășurării."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Desfășurarea unei prisme trunchiate",
+        "steps": [
+          "AB=3, BC=√8≈2,828, CA=√5≈2,236; perimetru 3+√8+√5≈8,064.",
+          "Poziții pe linie: 0; 3; 5,828; 8,064. Înălțimi: 1;2,5;1,5;1.",
+          "Aria laterală exactă = 3·(1+2,5)/2 + √8·(2,5+1,5)/2 + √5·(1,5+1)/2 ≈13,702 m²."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "9.2",
+      "unit": 9,
+      "title": "Desfășurarea piramidei prin triunghiuri",
+      "data": "Piramida din 6.3: baza pătrată de latură 3 și vârful S=(2;2;4). Muchii laterale: SA=√18, SB=SD=√21, SC=√24.",
+      "tasks": [
+        "1. Taie mantaua pe muchia SA; cu compasul construiește fețele SAB, SBC, SCD, SDA din trei laturi.",
+        "2. Notează laturile comune și repetarea punctului A la închiderea șirului de triunghiuri.",
+        "3. Măsoară unghiurile la S și calculează suma."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Desfășurarea piramidei prin triunghiuri",
+        "steps": [
+          "Fețe SAB/SDA: unghi la S ≈39,5097°; SBC/SCD: ≈36,6992°.",
+          "Suma unghiurilor la vârf ≈152,418°, sub 360°; toate laturile bazei =3.",
+          "Muchia SA este duplicată la cele două capete ale desfășurării. Planșa P12."
+        ],
+        "plan": "P12"
+      }
+    },
+    {
+      "id": "9.3",
+      "unit": 9,
+      "title": "Desfășurarea mantalei cilindrice tăiate",
+      "data": "Cilindrul din 8.2: R=1, plan de tăiere z=x−0,5; parametrizează x=3+cosθ. Deschide mantaua pe generatoarea θ=0.",
+      "tasks": [
+        "1. În desen plan, trasează axa orizontală s de lungime 2πR și împarte-o în opt intervale egale.",
+        "2. Pe fiecare generatoare verticală din desfășurare reportează cota z(θ)=2,5+cosθ.",
+        "3. Trasează prin puncte curba marginii superioare și verifică închiderea ei la θ=2π."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Desfășurarea mantalei cilindrice tăiate",
+        "steps": [
+          "s=Rθ=θ; lățimea totală 2π≈6,283.",
+          "La θ=0,π/4,π/2,3π/4,π,5π/4,3π/2,7π/4,2π, z≈3,50;3,21;2,50;1,79;1,50;1,79;2,50;3,21;3,50.",
+          "Marginea este curba z(s)=2,5+cos s, nu o polilinie cu opt laturi. Lungimea curbei ≈7,640 (perimetrul elipsei din 8.2). Planșa P13."
+        ],
+        "plan": "P13"
+      }
+    },
+    {
+      "id": "9.4",
+      "unit": 9,
+      "title": "Desfășurarea mantalei conului drept",
+      "data": "R=1, h=2√2. Conul este drept circular, mantaua fiind tăiată pe o generatoare.",
+      "tasks": [
+        "1. Calculează lungimea reală a generatoarei G.",
+        "2. Calculează unghiul sectorului circular din desfășurare.",
+        "3. Cu compasul și raportorul construiește sectorul și verifică lungimea arcului."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Desfășurarea mantalei conului drept",
+        "steps": [
+          "G=√(R²+h²)=√(1+8)=3.",
+          "φ=360°·R/G=120°; lungimea arcului 3·(2π/3)=2π, egală cu circumferința bazei."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "10.1",
+      "unit": 10,
+      "title": "Calcule de scară",
+      "data": "a) Zid 12,50 m la 1:100. b) Grindă 35 cm la 1:20. c) Pe plan 1:200 măsori 48 mm. d) Fațadă 18 m pe lățime utilă ≤400 mm.",
+      "tasks": [
+        "1. Calculează a) și b) în milimetri pe hârtie.",
+        "2. Calculează c) lungimea reală în metri.",
+        "3. Alege d) o scară uzuală permisă de seria din manual și calculează lungimea desenului."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Calcule de scară",
+        "steps": [
+          "a) 12 500/100=125 mm; b) 350/20=17,5 mm.",
+          "c) 48·200=9 600 mm=9,60 m.",
+          "d) 18 000/400=45; alegere uzuală 1:50, reprezentare 360 mm (<400)."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "10.2",
+      "unit": 10,
+      "title": "Format, chenar și indicator",
+      "data": "Folosind convențiile din Unitatea 10 a manualului Sârbu (2017): determină formatul A2 și A3×3 și indicatorul pentru A2 și A4. Desenează A4 la scara 1:2.",
+      "tasks": [
+        "1. Notează dimensiunile formatelor A2 și A3×3.",
+        "2. Pe A4 la scara 1:2 trasează marginea, zona neutră, chenarul, fâșia de îndosariere și indicatorul mic.",
+        "3. Înscrie dimensiunile reale și cele de trasare în desen."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Format, chenar și indicator",
+        "steps": [
+          "A2: 420×594 mm; A3×3: 420×891 mm.",
+          "A2: indicator mare 185×50 mm; A4: indicator mic 120×40 mm (convenția cursului din 2017).",
+          "La 1:2: A4 devine 105×148,5 mm; zona neutră 5→2,5 mm; fâșia de îndosariere 20→10 mm; indicatorul mic 120×40→60×20 mm."
+        ],
+        "plan": null
+      }
+    },
+    {
+      "id": "10.3",
+      "unit": 10,
+      "title": "Elevația unui perete complet determinat",
+      "data": "Perete 6,45 m lungime, 2,80 m înălțime, vedere frontală. Ușa: de la x=0,90 la 1,80 m, z=0–2,10 m. Fereastra: x=3,30–4,50 m, z=0,90–2,10 m. Pardoseală ±0,00.",
+      "tasks": [
+        "1. Pe A4 la scara 1:50 trasează peretele și contururile celor două goluri, folosind coordonatele date.",
+        "2. Cotează lungimea totală, segmentele dintre goluri și înălțimile: pardoseală, parapet, buiandrug, partea superioară.",
+        "3. Verifică faptul că suma cotelor orizontale parțiale este egală cu 6,45 m."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Elevația unui perete complet determinat",
+        "steps": [
+          "Perete pe hârtie: 6450/50=129 mm lungime, 2800/50=56 mm înălțime.",
+          "Ușa: lățime 900/50=18 mm, înălțime 2100/50=42 mm; fereastra: 1200/50=24 mm, înălțime 24 mm; parapet 900/50=18 mm.",
+          "Lanțul orizontal: 0,90+0,90+1,50+1,20+1,95=6,45 m. Cote de nivel ±0,00, +0,90, +2,10, +2,80. Planșa P14."
+        ],
+        "plan": "P14"
+      }
+    },
+    {
+      "id": "10.4",
+      "unit": 10,
+      "title": "Linii de desen după convenția Sârbu",
+      "data": "Elemente: contur secțiune, muchie vizibilă, muchie acoperită, linie de cotă, hașură, axă de gol de ușă, chenar.",
+      "tasks": [
+        "1. Completează pentru fiecare element indicativul C1/C2/C3/I2 sau altul corespunzător.",
+        "2. Trasează câte un exemplu scurt al fiecărui tip pe liniile de jos.",
+        "3. Compară cu convențiile Unității 10 a manualului din 2017, fără a le prezenta drept standarde actuale."
+      ],
+      "check": "",
+      "solution": {
+        "title": "Linii de desen după convenția Sârbu",
+        "steps": [
+          "Contur secțiune: C1; muchie vizibilă în vedere: C2; muchie acoperită: I2.",
+          "Linie de cotă: C3; hașură: C3; axă gol de ușă: C3; chenar: C1. Acestea sunt notațiile materialului Sârbu (2017), nu o verificare a statutului normativ actual."
+        ],
+        "plan": null
+      }
+    }
+  ]
+}

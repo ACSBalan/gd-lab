@@ -1,0 +1,4 @@
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const files=['index.html','styles.css','studio.css','manifest.webmanifest','sw.js','data/bundle.js','data/exam.js','data/cards.json','data/seminar.json',...fs.readdirSync('scripts').filter(n=>n.endsWith('.js')).map(n=>'scripts/'+n),...fs.readdirSync('vendor').filter(n=>n.endsWith('.js')||n==='LICENSE').map(n=>'vendor/'+n),...fs.readdirSync('images').map(n=>'images/'+n),...fs.readdirSync('icons').map(n=>'icons/'+n)];
+for(const file of files){const dest=path.join('dist',file);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.copyFileSync(file,dest);}fs.writeFileSync('dist/.nojekyll','');
+fs.writeFileSync('dist/build-info.json',JSON.stringify({builtAt:new Date().toISOString(),files:Object.fromEntries(files.map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex')]))},null,2));console.log('Built '+files.length+' offline assets.');
