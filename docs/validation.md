@@ -50,9 +50,13 @@ The first GitHub Linux run passed the mathematical tests and 10 of 11 browser te
 
 The source, dependency lockfile, automated tests, deployment workflow and documentation are committed on `main`. Every one of the 53 uploaded initial file blobs was compared with its local Git object hash before updating the branch.
 
-The `validate` job succeeded, including the deployable artifact. The `deploy` job stopped at `actions/configure-pages@v5`: GitHub Pages is not enabled for this repository (`has_pages: false`, verified via the repository API). The connected GitHub tool permits source writes but exposes no Pages settings mutation, and the available browser session is not signed into GitHub. This is an outstanding publication step, not a successful live deployment.
+**Published and verified:** [https://acsbalan.github.io/gd-lab/](https://acsbalan.github.io/gd-lab/).
 
-Required account action: in **Settings → Pages**, select **GitHub Actions** as the source. Then rerun the failed deployment job in the linked Actions run. The intended URL is `https://acsbalan.github.io/gd-lab/`; it must not be treated as a verified working site until that deployment succeeds.
+After the repository owner selected GitHub Actions as the Pages source, the failed deployment job was rerun. Both `validate` and `deploy` completed successfully in [run 38209280371](https://github.com/ACSBalan/gd-lab/actions/runs/38209280371); the successful deployment job is `114682722143`. The published application comes from tested source commit `6787130659a22cb6d8a0fb323e4c4aafa1fe5bfa`. Subsequent documentation-only commits do not change its runtime files.
+
+Post-deployment verification on 12 October 2026 fetched all **39 published assets** over HTTPS: every response was HTTP 200 and every SHA-256 matched the CI-generated `build-info.json` (build time `2026-10-12T05:46:06.366Z`). All application code and educational data also matched the local build byte for byte. The two unchanged top-level files `styles.css` and `manifest.webmanifest` differ locally only in Windows/Linux line endings; normalized content is identical.
+
+The public address was opened in the browser and the integrated laboratory was entered successfully. The interface displayed all ten unit selectors, the 3D model controls, the construction board and the status “Offline pregătit”. This live smoke check complements the separately executed automated offline test above; it does not replace the physical iPhone checks below.
 
 ## Scope and remaining device verification
 
@@ -61,6 +65,5 @@ Required account action: in **Settings → Pages**, select **GitHub Actions** as
 - The original validated course material and illustrations were preserved, not independently re-certified line by line. This implementation checked the source convention for H/W unfolding and used the supplied academic support for the added analytic activities.
 - Validation covers constructions entered into the application. Photographed handwritten epures and arbitrary freehand curves are not automatically graded.
 - Surface sections are sampled from analytic equations for rendering; displayed finite cone/cylinder sections are clipped to the finite object. The analytic endpoints and required construction results use equations, not sampled pixels.
-- GitHub Pages publication is confirmed only when the deployment workflow succeeds and the public URL serves the integrated application. Repository write access alone does not activate Pages.
 
 See [architecture](architecture.md) for formulas, tolerances and persistence details and [curriculum](curriculum.md) for the per-unit activity map. GitHub Actions uploads its browser report, traces on failure and screenshots as a separate validation artifact for each run.

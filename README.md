@@ -33,7 +33,9 @@ Deschide http://127.0.0.1:4173/gd-lab/. Pe Linux, instalarea browserului pentru 
 
 Fluxul din [.github/workflows/pages.yml](.github/workflows/pages.yml) verifică matematica, integritatea datelor, interfața, randarea și funcționarea offline înainte de publicare. Publică exclusiv directorul generat `dist/`.
 
-În repository: **Settings → Pages → Source: GitHub Actions**. Această configurare se face o singură dată. Adresa proiectului este **https://acsbalan.github.io/gd-lab/** (fără spațiul din numele contului). Starea efectivă a publicării se verifică în Actions și Pages; existența configurației nu dovedește singură că adresa este deja activă.
+Aplicația este publicată la **[https://acsbalan.github.io/gd-lab/](https://acsbalan.github.io/gd-lab/)**. Publicarea și cele 39 de fișiere servite au fost verificate pe 12 octombrie 2026; [fluxul de validare și publicare](https://github.com/ACSBalan/gd-lab/actions/runs/38209280371) s-a încheiat cu succes.
+
+Sursa Pages este deja configurată ca **GitHub Actions**. Modificările ulterioare pe `main` trec prin același flux de teste și publicare.
 
 ## Salvare, transfer și instalare
 
