@@ -12,7 +12,7 @@ Counts verified by executable tests: **10 units, 345 unique flashcard IDs, 38 se
 
 ## Executed checks
 
-Environment: Windows, Node.js 24.19.0, Playwright 1.56.1, Chromium 141.0.7390.37 with WebGL enabled using software rendering for reproducibility. The CI configuration uses Node.js 22 and Ubuntu; its outcome must be read from the corresponding GitHub Actions run rather than inferred from this local run.
+Local environment: Windows, Node.js 24.19.0, Playwright 1.56.1, Chromium 141.0.7390.37 with WebGL enabled using software rendering for reproducibility. The same 18 mathematical/integrity tests and 11 browser tests also passed on Ubuntu with Node.js 22 in [GitHub Actions run 38209280371](https://github.com/ACSBalan/gd-lab/actions/runs/38209280371), for source commit `6787130659a22cb6d8a0fb323e4c4aafa1fe5bfa`. The build and Pages artifact upload passed there as well.
 
 | Category | Executed evidence | Result |
 | --- | --- | --- |
@@ -44,7 +44,15 @@ Tests verify that existing scheduled card progress survives studio navigation, a
 
 The offline test waits for the service worker to control the page, confirms all 14 illustrations and the local Three.js module are cached, disables the browser network, reloads, and opens all ten laboratories. A reference PNG is then fetched successfully from the offline cache. No external runtime CDN is used.
 
-The first GitHub Linux run passed the mathematical tests and 10 of 11 browser tests. Its invalid-import assertion also compared the incidental autosave timestamp, which changed while the actual progress remained identical. That assertion now compares every progress field while excluding only `savedAt`; no geometry or persistence requirement was removed. The subsequent Actions run is the authoritative CI result.
+The first GitHub Linux run passed the mathematical tests and 10 of 11 browser tests. Its invalid-import assertion also compared the incidental autosave timestamp, which changed while the actual progress remained identical. That assertion now compares every progress field while excluding only `savedAt`; no geometry or persistence requirement was removed. The subsequent Actions run linked above passed all tests.
+
+## Publication status
+
+The source, dependency lockfile, automated tests, deployment workflow and documentation are committed on `main`. Every one of the 53 uploaded initial file blobs was compared with its local Git object hash before updating the branch.
+
+The `validate` job succeeded, including the deployable artifact. The `deploy` job stopped at `actions/configure-pages@v5`: GitHub Pages is not enabled for this repository (`has_pages: false`, verified via the repository API). The connected GitHub tool permits source writes but exposes no Pages settings mutation, and the available browser session is not signed into GitHub. This is an outstanding publication step, not a successful live deployment.
+
+Required account action: in **Settings → Pages**, select **GitHub Actions** as the source. Then rerun the failed deployment job in the linked Actions run. The intended URL is `https://acsbalan.github.io/gd-lab/`; it must not be treated as a verified working site until that deployment succeeds.
 
 ## Scope and remaining device verification
 
